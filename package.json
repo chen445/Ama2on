@@ -10,6 +10,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "webpack",
     "start": "webpack --watch --mode=development"
   },
   "repository": {
@@ -35,5 +36,8 @@
     "redux": "^4.1.0",
     "webpack": "^5.38.1",
     "webpack-cli": "^4.7.0"
+  },
+  "devDependencies": {
+    "redux-logger": "^3.0.6"
   }
 }
