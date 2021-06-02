@@ -10,6 +10,8 @@ import rootReducer from "../reducers/root_reducer";
 //   middlewares.push(logger);
 // }
 
+//
+
 const configureStore = (preloadedState = {}) =>
   createStore(rootReducer, preloadedState, applyMiddleware(thunk));
 
