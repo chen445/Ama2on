@@ -17,7 +17,7 @@
 #  index_reviews_on_reviewer_id  (reviewer_id)
 #
 class Review < ApplicationRecord
-    validates :rating, inclusion {in: (1..5)}
+    validates :rating, inclusion: {in: (1..5)}
 
     belongs_to :reviewer,
         foreign_key: :reviewer_id,
