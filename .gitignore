@@ -60,3 +60,5 @@ node_modules/
 bundle.js
 
 /public/assets
+
+/config/master.key
