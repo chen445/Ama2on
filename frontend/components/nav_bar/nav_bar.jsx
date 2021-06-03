@@ -7,32 +7,40 @@ const NavBar=(props)=>{
     const display = props.currentUser ? (
          <div className="nav-item nav-right">
             <div className="horizontal">
-                <div className="vertical">
-                    <p>Hello,{props.currentUser.first_name}</p>
-                </div>
+                Hello,{props.currentUser.first_name}
+                 <br></br>
+                Account & Lists
+                <div className='dropdown'>
                 <button className="signout-dropdown" onClick={props.signout}>Log out</button>
+                </div>
             </div>
+             <p >Return & 
+                <br/>
+                Orders</p>
              <ImCart/>
         </div>
     ) : (
         <div  className="nav-item nav-right">
             <div className="horizontal" >
                 Hello,Sign in 
-                <div className='login-dropdown'>
+                <br></br>
+                Account & Lists
+                <div className='dropdown'>
                 <Link className="link-list" to="/login">
                     Sign in
                 </Link > 
-            <div>Return & Orders</div>
-                <p>Account & Lists</p>
+                </div>
             </div>
-            </div>
+             <p >Return & 
+                <br/>
+                Orders</p>
             <ImCart/>
         </div>
     );
 
     return (
         <header className='nav-bar'>
-            <div className='nav-item nav-left'><h1 className='logo'>logoimg</h1></div>
+            <div className='nav-item nav-left'><h1 className='logo'>Ama2on</h1></div>
             <Search className='nav-item nav-center'/>
             {display} 
 

@@ -34,18 +34,23 @@ class SessionForm extends React.Component{
     render(){
 
         const fisrt_name_input = (this.props.first_name === undefined) ? "" :
-        <label>FirstName:
+       <label>FirstName
+           <br></br>
             <input type="text"
             value={this.state.first_name}
             onChange={this.update('first_name')}/>
+            <br/><br/>
         </label>
 
         const last_name_input = (this.props.last_name === undefined) ? "" :
-        <label>LastName:
+        <label>LastName
+            <br></br>
             <input type="text"
             value={this.state.last_name}
             onChange={this.update('last_name')}/>
+            <br/><br/>
         </label>
+
         
         const link = 
         <div>
@@ -57,23 +62,30 @@ class SessionForm extends React.Component{
         
         return(
             <form onSubmit={this.handleClick}>
-                <h1>{this.props.formType}</h1>
+                <h1 className='header'>{this.props.formType}</h1>
                 <br/>
+                <div className="form-content">
                 {this.errors()}
-                <label>Email:
-                    <input name="email" 
+                <label>Email
+                    <br/>
+                    <input type="text" 
                     value={this.state.email}
                     onChange={this.update('email')}/>
                 </label>
-                 <label>Password:
-                    <input name="password" 
+                <br/><br/>
+                 <label>Password
+                     <br/>
+                    <input type="password" 
                     value={this.state.password}
                     onChange={this.update('password')}/>
                 </label>
+                <br/><br/>
                 {fisrt_name_input}
                 {last_name_input}
                 <input type="submit" value={this.props.formType}/>
+                <br/><br/>
                 {link}
+                </div>
             </form>
         )
     }
