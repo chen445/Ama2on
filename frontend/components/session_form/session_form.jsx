@@ -61,7 +61,10 @@ class SessionForm extends React.Component{
         
         
         return(
-            <form onSubmit={this.handleClick}>
+            <div>
+                <div className='login-log'>Ama2on</div>
+            <br></br>
+            <form onSubmit={this.handleClick} className='session-form'>
                 <h1 className='header'>{this.props.formType}</h1>
                 <br/>
                 <div className="form-content">
@@ -87,6 +90,7 @@ class SessionForm extends React.Component{
                 {link}
                 </div>
             </form>
+            </div>
         )
     }
 }

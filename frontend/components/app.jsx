@@ -10,7 +10,12 @@ import SignUpFormContainer from './session_form/signup_form_container'
 import NavBarContainer from './nav_bar/nav_bar_container'
 const App = () => (
     <div>
-        <NavBarContainer/>
+        <Route 
+            render={({ location }) => ['/signup', '/login'].includes(location.pathname)
+                ? null
+                : <NavBarContainer/>
+            }
+        />
         <div>
            <Switch>
                <AuthRoute exact path="/login" component={LogInFormContainer}></AuthRoute>
