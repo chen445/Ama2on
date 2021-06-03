@@ -42,6 +42,7 @@ const NavBar=(props)=>{
         <header className='nav-bar'>
             <div className='nav-item nav-left'>
                 <h1 className='logo'>Ama2on</h1>  
+            </div>
             {/* <img src="/assets/images/Picture2.jpg" alt=""/></div> */}
             <Search className='nav-item nav-center'/>
             {display} 
