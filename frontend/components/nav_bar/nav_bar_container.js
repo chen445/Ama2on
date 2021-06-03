@@ -1,5 +1,5 @@
 import {connect} from 'react-redux';
-import {signout} from '../../actions/session';
+import {logout} from '../../actions/session';
 import NavBar from './nav_bar';
 
 const mapStateToProps = (state) =>({
@@ -8,8 +8,7 @@ const mapStateToProps = (state) =>({
 
 
 const mapDispatchToProps = dispatch => ({
-    signout: ()=> dispatch(signout()),
-    
+    signout: ()=> dispatch(logout()),
 
 })
 

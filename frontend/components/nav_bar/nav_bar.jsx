@@ -7,7 +7,10 @@ const NavBar=(props)=>{
     const display = props.currentUser ? (
          <div className="nav-item nav-right">
             <div className="horizontal">
-                <p>Hello, {props.currentUser.first_name}</p>
+                <div className="vertical">
+                    <p>Hello, </p>
+                    <p>{props.currentUser.first_name}</p>
+                </div>
                 <button className="signout" onClick={props.signout}>Log out</button>
             </div>
              <ImCart/>
@@ -26,7 +29,7 @@ const NavBar=(props)=>{
 
     return (
         <header className='nav-bar'>
-            <div className='nav-item' ><h1 className='logo'>logoimg</h1></div>
+            <div className='nav-item nav-left'><h1 className='logo'>logoimg</h1></div>
             <Search className='nav-item nav-center'/>
             {display} 
 
