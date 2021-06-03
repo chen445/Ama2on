@@ -8,20 +8,23 @@ const NavBar=(props)=>{
          <div className="nav-item nav-right">
             <div className="horizontal">
                 <div className="vertical">
-                    <p>Hello, </p>
-                    <p>{props.currentUser.first_name}</p>
+                    <p>Hello,{props.currentUser.first_name}</p>
                 </div>
-                <button className="signout" onClick={props.signout}>Log out</button>
+                <button className="signout-dropdown" onClick={props.signout}>Log out</button>
             </div>
              <ImCart/>
         </div>
     ) : (
         <div  className="nav-item nav-right">
             <div className="horizontal" >
-                <p>Hello, </p>
-                <Link to="/login">
-                    <p>Sign in</p>
-                </Link>  
+                Hello,Sign in 
+                <div className='login-dropdown'>
+                <Link className="link-list" to="/login">
+                    Sign in
+                </Link > 
+            <div>Return & Orders</div>
+                <p>Account & Lists</p>
+            </div>
             </div>
             <ImCart/>
         </div>
