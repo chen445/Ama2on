@@ -41,8 +41,8 @@ class User < ApplicationRecord
         source: :product
 
 
-    def self.find_by_credentials(username, password)
-        user = User.find_by(username: username)
+    def self.find_by_credentials(email, password)
+        user = User.find_by(email: email)
         return nil unless user
         user.is_password?(password) ? user : nil
     end
@@ -58,7 +58,7 @@ class User < ApplicationRecord
 
     def reset_session_token!
         self.session_token = SecureRandom::urlsafe_base64
-        save!
+        self.save!
         self.session_token
     end
 

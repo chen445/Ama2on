@@ -1,7 +1,26 @@
 import React from 'react';
+import {
+  Route,
+  Switch,
+  Link,
+} from 'react-router-dom';
+import AuthRoute from '../util/route_utils'
+import LogInFormContainer from './session_form/login_form_container'
+import SignUpFormContainer from './session_form/signup_form_container'
+import NavBarContainer from './nav_bar/nav_bar_container'
 const App = () => (
     <div>
-    <h1>Welcome to Ama2on</h1>
+        <NavBarContainer/>
+        <div>
+           <Switch>
+               <Route exact path="/login" component={LogInFormContainer}></Route>
+               <Route exact path="/signup" component={SignUpFormContainer}></Route>
+           </Switch>
+           <Link to={'/login'}>Login</Link>
+           <Link to={'/signup'}>Signup</Link>
+            {/* <Route exact path='/' component={Home}></Route> */}
+
+        </div>
     </div>
 );
 
