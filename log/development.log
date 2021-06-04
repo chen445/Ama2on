@@ -6001,3 +6001,1705 @@ FOREIGN KEY ("blob_id")
   [1m[36mProduct Load (3.0ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
   [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
   [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+Started GET "/" for ::1 at 2021-06-03 22:54:46 -0700
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/ying/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  
+ActionController::RoutingError (Couldn't find Api::ProductsHelper, expected it to be defined in helpers/api/products_helper.rb):
+  
+app/controllers/application_controller.rb:1:in `<top (required)>'
+app/controllers/static_pages_controller.rb:1:in `<top (required)>'
+Started GET "/" for ::1 at 2021-06-03 22:55:24 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 2829ms (Views: 2825.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2021-06-03 22:58:08 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 93ms (Views: 89.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2021-06-03 22:58:31 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 93ms (Views: 88.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/session" for ::1 at 2021-06-03 22:58:39 -0700
+Started POST "/api/user" for ::1 at 2021-06-03 22:58:39 -0700
+Processing by Api::UsersController#create as JSON
+  Parameters: {"user"=>{"first_name"=>"", "last_name"=>"", "email"=>"", "password"=>"[FILTERED]"}}
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"demo@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "demo@gmail.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:45
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:6
+  [1m[35m (2.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:61
+  [1m[36mUser Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "demo@gmail.com"], ["id", 6], ["LIMIT", 1]]
+  ↳ app/models/user.rb:61
+  [1m[36mUser Exists (2.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "P6AvmhIIS4lv1mxPHUKz0Q"], ["id", 6], ["LIMIT", 1]]
+  ↳ app/models/user.rb:61
+  [1m[36mUser Exists (1.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:6
+  [1m[36mUser Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "JoJPdJTzOsc0m5Oew9uebA"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:6
+  [1m[36mUser Update (3.2ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "P6AvmhIIS4lv1mxPHUKz0Q"], ["updated_at", "2021-06-04 05:58:39.707556"], ["id", 6]]
+  ↳ app/models/user.rb:61
+  [1m[35m (0.8ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/users_controller.rb:6
+Completed 422 Unprocessable Entity in 486ms (Views: 0.2ms | ActiveRecord: 17.1ms)
+
+
+  [1m[35m (2.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:61
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered api/users/show.json.jbuilder (1.9ms)
+Completed 200 OK in 502ms (Views: 16.0ms | ActiveRecord: 14.1ms)
+
+
+Started GET "/" for ::1 at 2021-06-03 22:58:48 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 29ms (Views: 26.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/session" for ::1 at 2021-06-03 22:58:55 -0700
+Processing by Api::SessionsController#create as JSON
+Started POST "/api/session" for ::1 at 2021-06-03 22:58:55 -0700
+  Parameters: {"user"=>{"email"=>"demo@gmail.com", "password"=>"[FILTERED]"}}
+Processing by Api::SessionsController#create as JSON
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "demo@gmail.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:45
+  Parameters: {"user"=>{"email"=>"", "password"=>"[FILTERED]"}}
+  [1m[35m (1.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:61
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "demo@gmail.com"], ["id", 6], ["LIMIT", 1]]
+  ↳ app/models/user.rb:61
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "4SgbB-p5GgWpv5BPbE5QLQ"], ["id", 6], ["LIMIT", 1]]
+  ↳ app/models/user.rb:61
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/models/user.rb:45
+Completed 401 Unauthorized in 6ms (Views: 0.2ms | ActiveRecord: 2.0ms)
+
+
+  [1m[36mUser Update (2.2ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "4SgbB-p5GgWpv5BPbE5QLQ"], ["updated_at", "2021-06-04 05:58:56.134267"], ["id", 6]]
+  ↳ app/models/user.rb:61
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:61
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered api/users/show.json.jbuilder (1.5ms)
+Completed 200 OK in 236ms (Views: 10.2ms | ActiveRecord: 8.1ms)
+
+
+Started GET "/" for ::1 at 2021-06-03 22:59:07 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 32ms (Views: 29.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/session" for ::1 at 2021-06-03 22:59:39 -0700
+Started POST "/api/session" for ::1 at 2021-06-03 22:59:39 -0700
+Processing by Api::SessionsController#create as JSON
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"demo@gmail.com", "password"=>"[FILTERED]"}}
+  Parameters: {"user"=>{"email"=>"", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "demo@gmail.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:45
+  [1m[36mUser Load (211.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", ""], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:61
+  ↳ app/models/user.rb:45
+Completed 401 Unauthorized in 214ms (Views: 0.2ms | ActiveRecord: 211.0ms)
+
+
+  [1m[36mUser Exists (1.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "demo@gmail.com"], ["id", 6], ["LIMIT", 1]]
+  ↳ app/models/user.rb:61
+  [1m[36mUser Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "qPWcHETRYQNaqma6ZiLTAg"], ["id", 6], ["LIMIT", 1]]
+  ↳ app/models/user.rb:61
+  [1m[36mUser Update (2.0ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "qPWcHETRYQNaqma6ZiLTAg"], ["updated_at", "2021-06-04 05:59:39.358030"], ["id", 6]]
+  ↳ app/models/user.rb:61
+  [1m[35m (6.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:61
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered api/users/show.json.jbuilder (1.8ms)
+Completed 200 OK in 237ms (Views: 9.5ms | ActiveRecord: 12.0ms)
+
+
+Started GET "/" for ::1 at 2021-06-03 23:09:05 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 85ms (Views: 82.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/session" for ::1 at 2021-06-03 23:09:10 -0700
+Started POST "/api/session" for ::1 at 2021-06-03 23:09:10 -0700
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"demo@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "demo@gmail.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:45
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:61
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "demo@gmail.com"], ["id", 6], ["LIMIT", 1]]
+  ↳ app/models/user.rb:61
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "gl2S0yhllO-YWKks5YA0CA"], ["id", 6], ["LIMIT", 1]]
+  ↳ app/models/user.rb:61
+  [1m[36mUser Update (0.8ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "gl2S0yhllO-YWKks5YA0CA"], ["updated_at", "2021-06-04 06:09:11.180810"], ["id", 6]]
+  ↳ app/models/user.rb:61
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/models/user.rb:45
+Completed 401 Unauthorized in 3ms (Views: 0.2ms | ActiveRecord: 0.9ms)
+
+
+  [1m[35m (10.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:61
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered api/users/show.json.jbuilder (2.8ms)
+Completed 200 OK in 252ms (Views: 11.4ms | ActiveRecord: 15.5ms)
+
+
+Started GET "/" for ::1 at 2021-06-03 23:09:14 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 33ms (Views: 29.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2021-06-03 23:09:16 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 38ms (Views: 34.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/session" for ::1 at 2021-06-03 23:09:29 -0700
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"demo@gmail.com", "password"=>"[FILTERED]"}}
+Started POST "/api/session" for ::1 at 2021-06-03 23:09:29 -0700
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "demo@gmail.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:45
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/models/user.rb:45
+Completed 401 Unauthorized in 3ms (Views: 0.2ms | ActiveRecord: 0.9ms)
+
+
+  [1m[35m (6.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:61
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "demo@gmail.com"], ["id", 6], ["LIMIT", 1]]
+  ↳ app/models/user.rb:61
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "aquiX-invwf4FsPUKQb1_A"], ["id", 6], ["LIMIT", 1]]
+  ↳ app/models/user.rb:61
+  [1m[36mUser Update (0.6ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "aquiX-invwf4FsPUKQb1_A"], ["updated_at", "2021-06-04 06:09:29.671464"], ["id", 6]]
+  ↳ app/models/user.rb:61
+  [1m[35m (5.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:61
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered api/users/show.json.jbuilder (4.2ms)
+Completed 200 OK in 265ms (Views: 15.0ms | ActiveRecord: 15.1ms)
+
+
+Started GET "/" for ::1 at 2021-06-03 23:11:33 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 59ms (Views: 56.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2021-06-03 23:17:38 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "aquiX-invwf4FsPUKQb1_A"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendered api/users/_user.json.jbuilder (0.9ms)
+  Rendered static_pages/root.html.erb within layouts/application (8.1ms)
+Completed 200 OK in 78ms (Views: 73.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for ::1 at 2021-06-03 23:19:10 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "aquiX-invwf4FsPUKQb1_A"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendered api/users/_user.json.jbuilder (0.6ms)
+  Rendered static_pages/root.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 74ms (Views: 70.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2021-06-03 23:19:27 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "aquiX-invwf4FsPUKQb1_A"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendered api/users/_user.json.jbuilder (0.5ms)
+  Rendered static_pages/root.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 57ms (Views: 52.1ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/api/session" for ::1 at 2021-06-03 23:20:14 -0700
+Started POST "/api/session" for ::1 at 2021-06-03 23:20:14 -0700
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"demo@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "demo@gmail.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:45
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:61
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "demo@gmail.com"], ["id", 6], ["LIMIT", 1]]
+  ↳ app/models/user.rb:61
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "LpcX9o3QiNfBHLkONTIEGQ"], ["id", 6], ["LIMIT", 1]]
+  ↳ app/models/user.rb:61
+  [1m[36mUser Update (1.2ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "LpcX9o3QiNfBHLkONTIEGQ"], ["updated_at", "2021-06-04 06:20:14.465162"], ["id", 6]]
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"", "password"=>"[FILTERED]"}}
+  ↳ app/models/user.rb:61
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:61
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/models/user.rb:45
+Completed 401 Unauthorized in 7ms (Views: 0.2ms | ActiveRecord: 1.9ms)
+
+
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered api/users/show.json.jbuilder (2.2ms)
+Completed 200 OK in 248ms (Views: 15.3ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/" for ::1 at 2021-06-03 23:20:16 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "LpcX9o3QiNfBHLkONTIEGQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendered api/users/_user.json.jbuilder (0.5ms)
+  Rendered static_pages/root.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 74ms (Views: 69.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2021-06-03 23:22:59 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "LpcX9o3QiNfBHLkONTIEGQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendered api/users/_user.json.jbuilder (0.7ms)
+  Rendered static_pages/root.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 127ms (Views: 122.8ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/api/session" for ::1 at 2021-06-03 23:23:09 -0700
+Started POST "/api/session" for ::1 at 2021-06-03 23:23:09 -0700
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"", "password"=>"[FILTERED]"}}
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"demo@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/models/user.rb:45
+Completed 401 Unauthorized in 5ms (Views: 0.2ms | ActiveRecord: 1.1ms)
+
+
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "demo@gmail.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:45
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:61
+  [1m[36mUser Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "demo@gmail.com"], ["id", 6], ["LIMIT", 1]]
+  ↳ app/models/user.rb:61
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "I7cUq-mLJpXYKfiTvL0jBw"], ["id", 6], ["LIMIT", 1]]
+  ↳ app/models/user.rb:61
+  [1m[36mUser Update (1.2ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "I7cUq-mLJpXYKfiTvL0jBw"], ["updated_at", "2021-06-04 06:23:09.784276"], ["id", 6]]
+  ↳ app/models/user.rb:61
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:61
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered api/users/show.json.jbuilder (2.0ms)
+Completed 200 OK in 239ms (Views: 9.7ms | ActiveRecord: 6.2ms)
+
+
+Started GET "/" for ::1 at 2021-06-03 23:24:08 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "I7cUq-mLJpXYKfiTvL0jBw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendered api/users/_user.json.jbuilder (1.3ms)
+  Rendered static_pages/root.html.erb within layouts/application (8.1ms)
+Completed 200 OK in 89ms (Views: 84.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2021-06-03 23:25:01 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (317.3ms)
+Completed 500 Internal Server Error in 326ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `logged_in' for #<#<Class:0x00007fda1ea0e2e0>:0x00007fda23222068>
+Did you mean?  logged_in?):
+    1: <% if logged_in %>
+    2:   <script id="current-user" type="text/javascript">
+    3:   	window.currentUser = <%= render("api/users/user.json.jbuilder",
+    4:   		user: current_user).html_safe %>
+  
+app/views/static_pages/root.html.erb:1:in `_app_views_static_pages_root_html_erb__2334022647713506962_70287434519860'
+Started GET "/" for ::1 at 2021-06-03 23:26:25 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "I7cUq-mLJpXYKfiTvL0jBw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendered api/users/_user.json.jbuilder (0.5ms)
+  Rendered static_pages/root.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 42ms (Views: 37.6ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/api/session" for ::1 at 2021-06-03 23:26:28 -0700
+Started POST "/api/session" for ::1 at 2021-06-03 23:26:28 -0700
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"demo@gmail.com", "password"=>"[FILTERED]"}}
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "demo@gmail.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:45
+  [1m[36mUser Load (217.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/models/user.rb:45
+Completed 401 Unauthorized in 219ms (Views: 0.2ms | ActiveRecord: 217.4ms)
+
+
+  [1m[35m (4.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:61
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "demo@gmail.com"], ["id", 6], ["LIMIT", 1]]
+  ↳ app/models/user.rb:61
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "c71O9xdDu5kl6qZQYnNq1w"], ["id", 6], ["LIMIT", 1]]
+  ↳ app/models/user.rb:61
+  [1m[36mUser Update (0.4ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "c71O9xdDu5kl6qZQYnNq1w"], ["updated_at", "2021-06-04 06:26:29.166665"], ["id", 6]]
+  ↳ app/models/user.rb:61
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:61
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered api/users/show.json.jbuilder (1.8ms)
+Completed 200 OK in 250ms (Views: 10.0ms | ActiveRecord: 10.4ms)
+
+
+Started GET "/" for ::1 at 2021-06-03 23:26:30 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "c71O9xdDu5kl6qZQYnNq1w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 34ms (Views: 31.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2021-06-03 23:31:20 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "c71O9xdDu5kl6qZQYnNq1w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendered api/users/_user.json.jbuilder (0.7ms)
+  Rendered static_pages/root.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 54ms (Views: 50.8ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/api/session" for ::1 at 2021-06-03 23:31:23 -0700
+Started POST "/api/session" for ::1 at 2021-06-03 23:31:23 -0700
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"demo@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "demo@gmail.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:45
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"", "password"=>"[FILTERED]"}}
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:61
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/models/user.rb:45
+Completed 401 Unauthorized in 4ms (Views: 0.2ms | ActiveRecord: 1.6ms)
+
+
+  [1m[36mUser Exists (1.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "demo@gmail.com"], ["id", 6], ["LIMIT", 1]]
+  ↳ app/models/user.rb:61
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "Yc_Pl_CYFKQdHo9H_vzGsQ"], ["id", 6], ["LIMIT", 1]]
+  ↳ app/models/user.rb:61
+  [1m[36mUser Update (2.5ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "Yc_Pl_CYFKQdHo9H_vzGsQ"], ["updated_at", "2021-06-04 06:31:23.941549"], ["id", 6]]
+  ↳ app/models/user.rb:61
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:61
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.5ms)
+  Rendered api/users/show.json.jbuilder (1.7ms)
+Completed 200 OK in 242ms (Views: 15.5ms | ActiveRecord: 7.1ms)
+
+
+Started GET "/" for ::1 at 2021-06-03 23:31:27 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "Yc_Pl_CYFKQdHo9H_vzGsQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 52ms (Views: 48.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2021-06-03 23:35:45 -0700
+  
+ArgumentError (After process_action callback :verify_authorized has not been defined):
+  
+app/controllers/application_controller.rb:4:in `<class:ApplicationController>'
+app/controllers/application_controller.rb:1:in `<top (required)>'
+app/controllers/static_pages_controller.rb:1:in `<top (required)>'
+Started GET "/" for ::1 at 2021-06-03 23:37:05 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "Yc_Pl_CYFKQdHo9H_vzGsQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendered api/users/_user.json.jbuilder (0.7ms)
+  Rendered static_pages/root.html.erb within layouts/application (39.4ms)
+Completed 200 OK in 118ms (Views: 95.0ms | ActiveRecord: 19.5ms)
+
+
+Started POST "/api/session" for ::1 at 2021-06-03 23:37:09 -0700
+Started POST "/api/session" for ::1 at 2021-06-03 23:37:09 -0700
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"demo@gmail.com", "password"=>"[FILTERED]"}}
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "demo@gmail.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:45
+  [1m[36mUser Load (214.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/models/user.rb:45
+Completed 401 Unauthorized in 217ms (Views: 0.2ms | ActiveRecord: 214.7ms)
+
+
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:61
+  [1m[36mUser Exists (1.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "demo@gmail.com"], ["id", 6], ["LIMIT", 1]]
+  ↳ app/models/user.rb:61
+  [1m[36mUser Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "JA5w2DdPvvyvb3406yR0pQ"], ["id", 6], ["LIMIT", 1]]
+  ↳ app/models/user.rb:61
+  [1m[36mUser Update (1.0ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "JA5w2DdPvvyvb3406yR0pQ"], ["updated_at", "2021-06-04 06:37:09.855555"], ["id", 6]]
+  ↳ app/models/user.rb:61
+  [1m[35m (5.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:61
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered api/users/show.json.jbuilder (1.7ms)
+Completed 200 OK in 260ms (Views: 9.0ms | ActiveRecord: 10.7ms)
+
+
+Started GET "/" for ::1 at 2021-06-03 23:37:11 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "JA5w2DdPvvyvb3406yR0pQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 39ms (Views: 36.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for ::1 at 2021-06-03 23:49:25 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "JA5w2DdPvvyvb3406yR0pQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendered api/users/_user.json.jbuilder (0.5ms)
+  Rendered static_pages/root.html.erb within layouts/application (43.7ms)
+Completed 200 OK in 1147ms (Views: 1125.4ms | ActiveRecord: 16.2ms)
+
+
+Started GET "/" for ::1 at 2021-06-03 23:49:29 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "JA5w2DdPvvyvb3406yR0pQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 39ms (Views: 35.7ms | ActiveRecord: 0.5ms)
+
+
+Started DELETE "/api/session" for ::1 at 2021-06-03 23:49:31 -0700
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "JA5w2DdPvvyvb3406yR0pQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:61
+  [1m[36mUser Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "demo@gmail.com"], ["id", 6], ["LIMIT", 1]]
+  ↳ app/models/user.rb:61
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "LwBFYyXYb5SFpPIR2g5cXA"], ["id", 6], ["LIMIT", 1]]
+  ↳ app/models/user.rb:61
+  [1m[36mUser Update (2.9ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "LwBFYyXYb5SFpPIR2g5cXA"], ["updated_at", "2021-06-04 06:49:31.694495"], ["id", 6]]
+  ↳ app/models/user.rb:61
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:61
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered api/users/show.json.jbuilder (1.5ms)
+Completed 200 OK in 22ms (Views: 9.9ms | ActiveRecord: 6.2ms)
+
+
+Started POST "/api/session" for ::1 at 2021-06-03 23:49:35 -0700
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"demo@gmail.com", "password"=>"[FILTERED]"}}
+Started POST "/api/session" for ::1 at 2021-06-03 23:49:35 -0700
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "demo@gmail.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:45
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:61
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "demo@gmail.com"], ["id", 6], ["LIMIT", 1]]
+  ↳ app/models/user.rb:61
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "Ag35KGC-Omj8QmEi_0C0Cw"], ["id", 6], ["LIMIT", 1]]
+  ↳ app/models/user.rb:61
+  [1m[36mUser Update (0.9ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "Ag35KGC-Omj8QmEi_0C0Cw"], ["updated_at", "2021-06-04 06:49:35.722225"], ["id", 6]]
+  ↳ app/models/user.rb:61
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/models/user.rb:45
+Completed 401 Unauthorized in 3ms (Views: 0.1ms | ActiveRecord: 1.1ms)
+
+
+  [1m[35m (5.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:61
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered api/users/show.json.jbuilder (2.1ms)
+Completed 200 OK in 253ms (Views: 11.8ms | ActiveRecord: 8.6ms)
+
+
+Started GET "/" for ::1 at 2021-06-03 23:49:37 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "Ag35KGC-Omj8QmEi_0C0Cw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 44ms (Views: 40.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2021-06-04 00:38:24 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "Ag35KGC-Omj8QmEi_0C0Cw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendered api/users/_user.json.jbuilder (2.0ms)
+  Rendered static_pages/root.html.erb within layouts/application (17.5ms)
+Completed 200 OK in 1280ms (Views: 1268.3ms | ActiveRecord: 0.9ms)
+
+
+Started DELETE "/api/session" for ::1 at 2021-06-04 00:38:28 -0700
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "Ag35KGC-Omj8QmEi_0C0Cw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:61
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "demo@gmail.com"], ["id", 6], ["LIMIT", 1]]
+  ↳ app/models/user.rb:61
+  [1m[36mUser Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "C5jzO2wz1FJMUedn8Sonyg"], ["id", 6], ["LIMIT", 1]]
+  ↳ app/models/user.rb:61
+  [1m[36mUser Update (1.8ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "C5jzO2wz1FJMUedn8Sonyg"], ["updated_at", "2021-06-04 07:38:28.827240"], ["id", 6]]
+  ↳ app/models/user.rb:61
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:61
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered api/users/show.json.jbuilder (1.7ms)
+Completed 200 OK in 24ms (Views: 8.7ms | ActiveRecord: 5.9ms)
+
+
+Started POST "/api/session" for ::1 at 2021-06-04 00:38:36 -0700
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"demo@gmail.com", "password"=>"[FILTERED]"}}
+Started POST "/api/user" for ::1 at 2021-06-04 00:38:36 -0700
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "demo@gmail.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:45
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:61
+  [1m[36mUser Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "demo@gmail.com"], ["id", 6], ["LIMIT", 1]]
+  ↳ app/models/user.rb:61
+  [1m[36mUser Exists (1.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "EhdMNMKlKXM7J_az3_D8uQ"], ["id", 6], ["LIMIT", 1]]
+  ↳ app/models/user.rb:61
+  [1m[36mUser Update (2.8ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "EhdMNMKlKXM7J_az3_D8uQ"], ["updated_at", "2021-06-04 07:38:36.484739"], ["id", 6]]
+  ↳ app/models/user.rb:61
+  [1m[35m (10.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:61
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered api/users/show.json.jbuilder (3.1ms)
+Completed 200 OK in 250ms (Views: 9.8ms | ActiveRecord: 17.5ms)
+
+
+Processing by Api::UsersController#create as JSON
+  Parameters: {"user"=>{"first_name"=>"", "last_name"=>"", "email"=>"", "password"=>"[FILTERED]"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:6
+  [1m[36mUser Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:6
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TyRiorbR59oWqRqQ7b3DFg"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:6
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/users_controller.rb:6
+Completed 422 Unprocessable Entity in 226ms (Views: 0.2ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/" for ::1 at 2021-06-04 01:24:19 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 1289ms (Views: 1282.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2021-06-04 01:25:01 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 1263ms (Views: 1260.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/products" for ::1 at 2021-06-04 01:25:03 -0700
+  
+SyntaxError (/Users/ying/Desktop/Bootcamp/Ama2on/app/controllers/api/products_controller.rb:17: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/api/products_controller.rb:17: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/api/products" for ::1 at 2021-06-04 01:26:06 -0700
+  
+SyntaxError (/Users/ying/Desktop/Bootcamp/Ama2on/app/controllers/api/products_controller.rb:17: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/api/products_controller.rb:17: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/" for ::1 at 2021-06-04 01:26:07 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 194ms (Views: 190.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2021-06-04 01:27:08 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 67ms (Views: 63.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/products" for ::1 at 2021-06-04 01:27:09 -0700
+  
+SyntaxError (/Users/ying/Desktop/Bootcamp/Ama2on/app/controllers/api/products_controller.rb:17: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/api/products_controller.rb:17: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/" for ::1 at 2021-06-04 01:29:19 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 1162ms (Views: 1158.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/products" for ::1 at 2021-06-04 01:29:21 -0700
+  
+SyntaxError (/Users/ying/Desktop/Bootcamp/Ama2on/app/controllers/api/products_controller.rb:17: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/api/products_controller.rb:17: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/" for ::1 at 2021-06-04 01:29:58 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 1587ms (Views: 1582.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/products" for ::1 at 2021-06-04 01:30:01 -0700
+  
+SyntaxError (/Users/ying/Desktop/Bootcamp/Ama2on/app/controllers/api/products_controller.rb:17: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/api/products_controller.rb:17: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/" for ::1 at 2021-06-04 01:32:24 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 1268ms (Views: 1263.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/products" for ::1 at 2021-06-04 01:32:26 -0700
+  
+SyntaxError (/Users/ying/Desktop/Bootcamp/Ama2on/app/controllers/api/products_controller.rb:17: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/api/products_controller.rb:17: syntax error, unexpected end-of-input, expecting keyword_end
+Started POST "/api/session" for ::1 at 2021-06-04 01:32:30 -0700
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (9.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/models/user.rb:45
+Completed 401 Unauthorized in 14ms (Views: 0.2ms | ActiveRecord: 9.8ms)
+
+
+Started POST "/api/session" for ::1 at 2021-06-04 01:32:32 -0700
+Started POST "/api/user" for ::1 at 2021-06-04 01:32:32 -0700
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"demo@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "demo@gmail.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:45
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:61
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "demo@gmail.com"], ["id", 6], ["LIMIT", 1]]
+  ↳ app/models/user.rb:61
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "z614h2vmLWtGoBdDwXL7nw"], ["id", 6], ["LIMIT", 1]]
+  ↳ app/models/user.rb:61
+  [1m[36mUser Update (3.6ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "z614h2vmLWtGoBdDwXL7nw"], ["updated_at", "2021-06-04 08:32:32.598935"], ["id", 6]]
+  ↳ app/models/user.rb:61
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:61
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered api/users/show.json.jbuilder (2.5ms)
+Completed 200 OK in 236ms (Views: 10.8ms | ActiveRecord: 8.3ms)
+
+
+Processing by Api::UsersController#create as JSON
+  Parameters: {"user"=>{"first_name"=>"", "last_name"=>"", "email"=>"", "password"=>"[FILTERED]"}}
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:6
+Started GET "/api/products" for ::1 at 2021-06-04 01:32:32 -0700
+  
+SyntaxError (/Users/ying/Desktop/Bootcamp/Ama2on/app/controllers/api/products_controller.rb:17: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/api/products_controller.rb:17: syntax error, unexpected end-of-input, expecting keyword_end
+  [1m[36mUser Exists (28.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:6
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "cODLzYXn1OLZ4wPsQaPMPw"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:6
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/users_controller.rb:6
+Completed 422 Unprocessable Entity in 277ms (Views: 0.1ms | ActiveRecord: 29.4ms)
+
+
+Started DELETE "/api/session" for ::1 at 2021-06-04 01:32:35 -0700
+Processing by Api::SessionsController#destroy as JSON
+Completed 404 Not Found in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started DELETE "/api/session" for ::1 at 2021-06-04 01:32:36 -0700
+Processing by Api::SessionsController#destroy as JSON
+Completed 404 Not Found in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms)
+
+
+Started DELETE "/api/session" for ::1 at 2021-06-04 01:32:36 -0700
+Processing by Api::SessionsController#destroy as JSON
+Completed 404 Not Found in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started DELETE "/api/session" for ::1 at 2021-06-04 01:32:42 -0700
+Processing by Api::SessionsController#destroy as JSON
+Completed 404 Not Found in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started DELETE "/api/session" for ::1 at 2021-06-04 01:32:42 -0700
+Processing by Api::SessionsController#destroy as JSON
+Completed 404 Not Found in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2021-06-04 01:32:53 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 32ms (Views: 28.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/products" for ::1 at 2021-06-04 01:32:54 -0700
+  
+SyntaxError (/Users/ying/Desktop/Bootcamp/Ama2on/app/controllers/api/products_controller.rb:17: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/api/products_controller.rb:17: syntax error, unexpected end-of-input, expecting keyword_end
+Started POST "/api/session" for ::1 at 2021-06-04 01:32:58 -0700
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"demo@gmail.com", "password"=>"[FILTERED]"}}
+Started POST "/api/session" for ::1 at 2021-06-04 01:32:58 -0700
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "demo@gmail.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:45
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+Processing by Api::SessionsController#create as JSON
+  ↳ app/models/user.rb:61
+  Parameters: {"user"=>{"email"=>"", "password"=>"[FILTERED]"}}
+  [1m[36mUser Exists (1.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "demo@gmail.com"], ["id", 6], ["LIMIT", 1]]
+  ↳ app/models/user.rb:61
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/models/user.rb:45
+Completed 401 Unauthorized in 4ms (Views: 0.1ms | ActiveRecord: 0.9ms)
+
+
+  [1m[36mUser Exists (2.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "Hc3g95t2y6saGTxEj948dA"], ["id", 6], ["LIMIT", 1]]
+  ↳ app/models/user.rb:61
+  [1m[36mUser Update (0.4ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "Hc3g95t2y6saGTxEj948dA"], ["updated_at", "2021-06-04 08:32:58.444742"], ["id", 6]]
+  ↳ app/models/user.rb:61
+  [1m[35m (5.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:61
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered api/users/show.json.jbuilder (2.4ms)
+Completed 200 OK in 246ms (Views: 10.6ms | ActiveRecord: 11.3ms)
+
+
+Started GET "/api/products" for ::1 at 2021-06-04 01:32:58 -0700
+  
+SyntaxError (/Users/ying/Desktop/Bootcamp/Ama2on/app/controllers/api/products_controller.rb:17: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/api/products_controller.rb:17: syntax error, unexpected end-of-input, expecting keyword_end
+Started DELETE "/api/session" for ::1 at 2021-06-04 01:32:59 -0700
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "Hc3g95t2y6saGTxEj948dA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:61
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "demo@gmail.com"], ["id", 6], ["LIMIT", 1]]
+  ↳ app/models/user.rb:61
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "LMZbU7BOE1TddlyXT4sctw"], ["id", 6], ["LIMIT", 1]]
+  ↳ app/models/user.rb:61
+  [1m[36mUser Update (0.9ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "LMZbU7BOE1TddlyXT4sctw"], ["updated_at", "2021-06-04 08:32:59.988362"], ["id", 6]]
+  ↳ app/models/user.rb:61
+  [1m[35m (6.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:61
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered api/users/show.json.jbuilder (2.1ms)
+Completed 200 OK in 23ms (Views: 8.6ms | ActiveRecord: 8.9ms)
+
+
+Started GET "/" for ::1 at 2021-06-04 01:33:48 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 1141ms (Views: 1134.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/products" for ::1 at 2021-06-04 01:33:50 -0700
+  
+SyntaxError (/Users/ying/Desktop/Bootcamp/Ama2on/app/controllers/api/products_controller.rb:17: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/api/products_controller.rb:17: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/" for ::1 at 2021-06-04 01:34:02 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 1071ms (Views: 1068.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/products" for ::1 at 2021-06-04 01:34:03 -0700
+  
+SyntaxError (/Users/ying/Desktop/Bootcamp/Ama2on/app/controllers/api/products_controller.rb:17: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/api/products_controller.rb:17: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/" for ::1 at 2021-06-04 01:35:34 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 1298ms (Views: 1293.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/products" for ::1 at 2021-06-04 01:35:36 -0700
+  
+SyntaxError (/Users/ying/Desktop/Bootcamp/Ama2on/app/controllers/api/products_controller.rb:17: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/api/products_controller.rb:17: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/" for ::1 at 2021-06-04 01:36:29 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 1473ms (Views: 1470.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/products" for ::1 at 2021-06-04 01:36:31 -0700
+  
+SyntaxError (/Users/ying/Desktop/Bootcamp/Ama2on/app/controllers/api/products_controller.rb:17: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/api/products_controller.rb:17: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/" for ::1 at 2021-06-04 01:37:26 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 112ms (Views: 106.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/products" for ::1 at 2021-06-04 01:37:26 -0700
+  
+SyntaxError (/Users/ying/Desktop/Bootcamp/Ama2on/app/controllers/api/products_controller.rb:17: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/api/products_controller.rb:17: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/" for ::1 at 2021-06-04 01:37:36 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 84ms (Views: 81.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/products" for ::1 at 2021-06-04 01:37:37 -0700
+  
+SyntaxError (/Users/ying/Desktop/Bootcamp/Ama2on/app/controllers/api/products_controller.rb:17: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/api/products_controller.rb:17: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/" for ::1 at 2021-06-04 01:39:15 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 1267ms (Views: 1261.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/products" for ::1 at 2021-06-04 01:39:16 -0700
+  
+SyntaxError (/Users/ying/Desktop/Bootcamp/Ama2on/app/controllers/api/products_controller.rb:17: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/api/products_controller.rb:17: syntax error, unexpected end-of-input, expecting keyword_end
+Started POST "/api/session" for ::1 at 2021-06-04 01:39:23 -0700
+Started POST "/api/session" for ::1 at 2021-06-04 01:39:23 -0700
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"", "password"=>"[FILTERED]"}}
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"demo@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/models/user.rb:45
+Completed 401 Unauthorized in 4ms (Views: 0.1ms | ActiveRecord: 1.7ms)
+
+
+  [1m[36mUser Load (3.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "demo@gmail.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:45
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:61
+  [1m[36mUser Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "demo@gmail.com"], ["id", 6], ["LIMIT", 1]]
+  ↳ app/models/user.rb:61
+  [1m[36mUser Exists (1.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "WIeG5wEkZ7iAGQBAinTGRQ"], ["id", 6], ["LIMIT", 1]]
+  ↳ app/models/user.rb:61
+  [1m[36mUser Update (1.6ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "WIeG5wEkZ7iAGQBAinTGRQ"], ["updated_at", "2021-06-04 08:39:23.415538"], ["id", 6]]
+  ↳ app/models/user.rb:61
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:61
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered api/users/show.json.jbuilder (2.1ms)
+Completed 200 OK in 247ms (Views: 10.2ms | ActiveRecord: 8.7ms)
+
+
+Started GET "/api/products" for ::1 at 2021-06-04 01:39:23 -0700
+  
+SyntaxError (/Users/ying/Desktop/Bootcamp/Ama2on/app/controllers/api/products_controller.rb:17: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/api/products_controller.rb:17: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/" for ::1 at 2021-06-04 01:39:51 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "WIeG5wEkZ7iAGQBAinTGRQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendered api/users/_user.json.jbuilder (0.5ms)
+  Rendered static_pages/root.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 60ms (Views: 55.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/products" for ::1 at 2021-06-04 01:39:52 -0700
+  
+SyntaxError (/Users/ying/Desktop/Bootcamp/Ama2on/app/controllers/api/products_controller.rb:17: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/api/products_controller.rb:17: syntax error, unexpected end-of-input, expecting keyword_end
+Started DELETE "/api/session" for ::1 at 2021-06-04 01:39:54 -0700
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "WIeG5wEkZ7iAGQBAinTGRQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:61
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "demo@gmail.com"], ["id", 6], ["LIMIT", 1]]
+  ↳ app/models/user.rb:61
+  [1m[36mUser Exists (1.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "gro_xiDOg7KAMlqRd1m3lQ"], ["id", 6], ["LIMIT", 1]]
+  ↳ app/models/user.rb:61
+  [1m[36mUser Update (0.7ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "gro_xiDOg7KAMlqRd1m3lQ"], ["updated_at", "2021-06-04 08:39:54.151858"], ["id", 6]]
+  ↳ app/models/user.rb:61
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:61
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered api/users/show.json.jbuilder (1.4ms)
+Completed 200 OK in 26ms (Views: 9.5ms | ActiveRecord: 4.6ms)
+
+
+Started GET "/" for ::1 at 2021-06-04 01:39:58 -0700
+Processing by StaticPagesController#root as HTML
+Started GET "/api/products" for ::1 at 2021-06-04 01:39:58 -0700
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 54ms (Views: 46.4ms | ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/ying/Desktop/Bootcamp/Ama2on/app/controllers/api/products_controller.rb:17: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/api/products_controller.rb:17: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/" for ::1 at 2021-06-04 01:40:11 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 1025ms (Views: 1021.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/products" for ::1 at 2021-06-04 01:40:12 -0700
+  
+SyntaxError (/Users/ying/Desktop/Bootcamp/Ama2on/app/controllers/api/products_controller.rb:17: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/api/products_controller.rb:17: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/" for ::1 at 2021-06-04 01:40:46 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 1074ms (Views: 1069.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/session" for ::1 at 2021-06-04 01:40:50 -0700
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"demo@gmail.com", "password"=>"[FILTERED]"}}
+Started POST "/api/user" for ::1 at 2021-06-04 01:40:50 -0700
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "demo@gmail.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:45
+Processing by Api::UsersController#create as JSON
+  Parameters: {"user"=>{"first_name"=>"", "last_name"=>"", "email"=>"", "password"=>"[FILTERED]"}}
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:61
+  [1m[35m (1.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:6
+  [1m[36mUser Exists (2.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "demo@gmail.com"], ["id", 6], ["LIMIT", 1]]
+  ↳ app/models/user.rb:61
+  [1m[36mUser Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:6
+  [1m[36mUser Exists (1.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "Gpr0vAumARmNYZlGhDKOGw"], ["id", 6], ["LIMIT", 1]]
+  ↳ app/models/user.rb:61
+  [1m[36mUser Exists (1.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "r2Su5fF9gw3qpkNNVwKVbQ"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:6
+  [1m[35m (0.6ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/users_controller.rb:6
+Completed 422 Unprocessable Entity in 222ms (Views: 0.2ms | ActiveRecord: 4.3ms)
+
+
+  [1m[36mUser Update (6.8ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "Gpr0vAumARmNYZlGhDKOGw"], ["updated_at", "2021-06-04 08:40:50.640507"], ["id", 6]]
+  ↳ app/models/user.rb:61
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:61
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered api/users/show.json.jbuilder (1.3ms)
+Completed 200 OK in 454ms (Views: 9.9ms | ActiveRecord: 13.9ms)
+
+
+Started GET "/api/products" for ::1 at 2021-06-04 01:40:50 -0700
+  
+SyntaxError (/Users/ying/Desktop/Bootcamp/Ama2on/app/controllers/api/products_controller.rb:17: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/api/products_controller.rb:17: syntax error, unexpected end-of-input, expecting keyword_end
+Started DELETE "/api/session" for ::1 at 2021-06-04 01:40:52 -0700
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "Gpr0vAumARmNYZlGhDKOGw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:61
+  [1m[36mUser Exists (1.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "demo@gmail.com"], ["id", 6], ["LIMIT", 1]]
+  ↳ app/models/user.rb:61
+  [1m[36mUser Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "ZlxwDpItlueyK-NvOcRLEA"], ["id", 6], ["LIMIT", 1]]
+  ↳ app/models/user.rb:61
+  [1m[36mUser Update (0.7ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "ZlxwDpItlueyK-NvOcRLEA"], ["updated_at", "2021-06-04 08:40:52.120525"], ["id", 6]]
+  ↳ app/models/user.rb:61
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:61
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered api/users/show.json.jbuilder (2.3ms)
+Completed 200 OK in 23ms (Views: 10.2ms | ActiveRecord: 5.9ms)
+
+
+Started GET "/api/products" for ::1 at 2021-06-04 01:40:55 -0700
+  
+SyntaxError (/Users/ying/Desktop/Bootcamp/Ama2on/app/controllers/api/products_controller.rb:17: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/api/products_controller.rb:17: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/" for ::1 at 2021-06-04 01:41:14 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 92ms (Views: 87.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/products" for ::1 at 2021-06-04 01:41:14 -0700
+  
+SyntaxError (/Users/ying/Desktop/Bootcamp/Ama2on/app/controllers/api/products_controller.rb:17: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/api/products_controller.rb:17: syntax error, unexpected end-of-input, expecting keyword_end
+Started POST "/api/session" for ::1 at 2021-06-04 01:41:20 -0700
+Started POST "/api/session" for ::1 at 2021-06-04 01:41:20 -0700
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"demo@gmail.com", "password"=>"[FILTERED]"}}
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "demo@gmail.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:45
+  [1m[36mUser Load (210.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/models/user.rb:45
+Completed 401 Unauthorized in 213ms (Views: 0.2ms | ActiveRecord: 210.0ms)
+
+
+  [1m[35m (1.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:61
+  [1m[36mUser Exists (1.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "demo@gmail.com"], ["id", 6], ["LIMIT", 1]]
+  ↳ app/models/user.rb:61
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "_Z3pghjf7hHdUxOBQKt1Ug"], ["id", 6], ["LIMIT", 1]]
+  ↳ app/models/user.rb:61
+  [1m[36mUser Update (2.2ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "_Z3pghjf7hHdUxOBQKt1Ug"], ["updated_at", "2021-06-04 08:41:20.280654"], ["id", 6]]
+  ↳ app/models/user.rb:61
+  [1m[35m (5.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:61
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered api/users/show.json.jbuilder (1.5ms)
+Completed 200 OK in 240ms (Views: 10.2ms | ActiveRecord: 12.7ms)
+
+
+Started GET "/api/products" for ::1 at 2021-06-04 01:41:20 -0700
+  
+SyntaxError (/Users/ying/Desktop/Bootcamp/Ama2on/app/controllers/api/products_controller.rb:17: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/api/products_controller.rb:17: syntax error, unexpected end-of-input, expecting keyword_end
+Started DELETE "/api/session" for ::1 at 2021-06-04 01:41:22 -0700
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "_Z3pghjf7hHdUxOBQKt1Ug"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:61
+  [1m[36mUser Exists (3.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "demo@gmail.com"], ["id", 6], ["LIMIT", 1]]
+  ↳ app/models/user.rb:61
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "E2OQPQkqA5tm2awSHUg-QQ"], ["id", 6], ["LIMIT", 1]]
+  ↳ app/models/user.rb:61
+  [1m[36mUser Update (1.3ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "E2OQPQkqA5tm2awSHUg-QQ"], ["updated_at", "2021-06-04 08:41:22.378437"], ["id", 6]]
+  ↳ app/models/user.rb:61
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:61
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered api/users/show.json.jbuilder (1.5ms)
+Completed 200 OK in 32ms (Views: 18.3ms | ActiveRecord: 8.0ms)
+
+
+Started GET "/" for ::1 at 2021-06-04 01:42:00 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 87ms (Views: 83.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/products" for ::1 at 2021-06-04 01:42:00 -0700
+  
+SyntaxError (/Users/ying/Desktop/Bootcamp/Ama2on/app/controllers/api/products_controller.rb:17: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/api/products_controller.rb:17: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/" for ::1 at 2021-06-04 01:44:30 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 126ms (Views: 120.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/products" for ::1 at 2021-06-04 01:44:31 -0700
+  
+SyntaxError (/Users/ying/Desktop/Bootcamp/Ama2on/app/controllers/api/products_controller.rb:17: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/api/products_controller.rb:17: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/" for ::1 at 2021-06-04 01:45:34 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+Started GET "/api/products" for ::1 at 2021-06-04 01:45:34 -0700
+Completed 200 OK in 70ms (Views: 66.4ms | ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/ying/Desktop/Bootcamp/Ama2on/app/controllers/api/products_controller.rb:17: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/api/products_controller.rb:17: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/" for ::1 at 2021-06-04 01:45:53 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 43ms (Views: 39.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/products" for ::1 at 2021-06-04 01:45:53 -0700
+  
+SyntaxError (/Users/ying/Desktop/Bootcamp/Ama2on/app/controllers/api/products_controller.rb:17: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/api/products_controller.rb:17: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/" for ::1 at 2021-06-04 01:51:25 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 99ms (Views: 95.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/products" for ::1 at 2021-06-04 01:51:25 -0700
+  
+SyntaxError (/Users/ying/Desktop/Bootcamp/Ama2on/app/controllers/api/products_controller.rb:17: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/api/products_controller.rb:17: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/" for ::1 at 2021-06-04 01:52:47 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 1292ms (Views: 1287.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/products" for ::1 at 2021-06-04 01:52:49 -0700
+  
+SyntaxError (/Users/ying/Desktop/Bootcamp/Ama2on/app/controllers/api/products_controller.rb:17: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/api/products_controller.rb:17: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/" for ::1 at 2021-06-04 01:52:58 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 81ms (Views: 78.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/products" for ::1 at 2021-06-04 01:52:59 -0700
+  
+SyntaxError (/Users/ying/Desktop/Bootcamp/Ama2on/app/controllers/api/products_controller.rb:17: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/api/products_controller.rb:17: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/" for ::1 at 2021-06-04 01:53:29 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 67ms (Views: 62.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/products" for ::1 at 2021-06-04 01:53:30 -0700
+  
+SyntaxError (/Users/ying/Desktop/Bootcamp/Ama2on/app/controllers/api/products_controller.rb:17: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/api/products_controller.rb:17: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/" for ::1 at 2021-06-04 01:58:17 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 94ms (Views: 90.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/products" for ::1 at 2021-06-04 01:58:18 -0700
+  
+SyntaxError (/Users/ying/Desktop/Bootcamp/Ama2on/app/controllers/api/products_controller.rb:17: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/api/products_controller.rb:17: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/" for ::1 at 2021-06-04 01:58:36 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 94ms (Views: 90.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/products" for ::1 at 2021-06-04 01:58:37 -0700
+  
+SyntaxError (/Users/ying/Desktop/Bootcamp/Ama2on/app/controllers/api/products_controller.rb:17: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/api/products_controller.rb:17: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/" for ::1 at 2021-06-04 02:02:32 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 68ms (Views: 64.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/products" for ::1 at 2021-06-04 02:02:33 -0700
+  
+SyntaxError (/Users/ying/Desktop/Bootcamp/Ama2on/app/controllers/api/products_controller.rb:17: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/api/products_controller.rb:17: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/" for ::1 at 2021-06-04 02:02:39 -0700
+Processing by StaticPagesController#root as HTML
+Started GET "/api/products" for ::1 at 2021-06-04 02:02:39 -0700
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 67ms (Views: 63.3ms | ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/ying/Desktop/Bootcamp/Ama2on/app/controllers/api/products_controller.rb:17: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/api/products_controller.rb:17: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/" for ::1 at 2021-06-04 02:02:42 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 42ms (Views: 38.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/products" for ::1 at 2021-06-04 02:02:43 -0700
+  
+SyntaxError (/Users/ying/Desktop/Bootcamp/Ama2on/app/controllers/api/products_controller.rb:17: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/api/products_controller.rb:17: syntax error, unexpected end-of-input, expecting keyword_end
+Started POST "/api/session" for ::1 at 2021-06-04 02:09:13 -0700
+Started POST "/api/session" for ::1 at 2021-06-04 02:09:13 -0700
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"demo@gmail.com", "password"=>"[FILTERED]"}}
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "demo@gmail.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:45
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:61
+  [1m[36mUser Load (6.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/models/user.rb:45
+Completed 401 Unauthorized in 226ms (Views: 1.1ms | ActiveRecord: 6.7ms)
+
+
+  [1m[36mUser Exists (2.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "demo@gmail.com"], ["id", 6], ["LIMIT", 1]]
+  ↳ app/models/user.rb:61
+  [1m[36mUser Exists (1.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "NZIToZg6sZqi8WVB_0y7Dw"], ["id", 6], ["LIMIT", 1]]
+  ↳ app/models/user.rb:61
+  [1m[36mUser Update (0.7ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "NZIToZg6sZqi8WVB_0y7Dw"], ["updated_at", "2021-06-04 09:09:13.862084"], ["id", 6]]
+  ↳ app/models/user.rb:61
+  [1m[35m (6.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:61
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.7ms)
+  Rendered api/users/show.json.jbuilder (4.0ms)
+Completed 200 OK in 269ms (Views: 14.9ms | ActiveRecord: 12.9ms)
+
+
+Started GET "/api/products" for ::1 at 2021-06-04 02:09:13 -0700
+  
+SyntaxError (/Users/ying/Desktop/Bootcamp/Ama2on/app/controllers/api/products_controller.rb:17: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/api/products_controller.rb:17: syntax error, unexpected end-of-input, expecting keyword_end
+Started DELETE "/api/session" for ::1 at 2021-06-04 02:09:16 -0700
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "NZIToZg6sZqi8WVB_0y7Dw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:61
+  [1m[36mUser Exists (1.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "demo@gmail.com"], ["id", 6], ["LIMIT", 1]]
+  ↳ app/models/user.rb:61
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "VZ3838zJWLP1mdBbQ7uX8A"], ["id", 6], ["LIMIT", 1]]
+  ↳ app/models/user.rb:61
+  [1m[36mUser Update (0.6ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "VZ3838zJWLP1mdBbQ7uX8A"], ["updated_at", "2021-06-04 09:09:16.718844"], ["id", 6]]
+  ↳ app/models/user.rb:61
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:61
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered api/users/show.json.jbuilder (2.2ms)
+Completed 200 OK in 22ms (Views: 10.8ms | ActiveRecord: 4.2ms)
+
+
+Started GET "/" for ::1 at 2021-06-04 09:18:05 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (12.0ms)
+Completed 200 OK in 2050ms (Views: 2031.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/products" for ::1 at 2021-06-04 09:18:07 -0700
+  
+SyntaxError (/Users/ying/Desktop/Bootcamp/Ama2on/app/controllers/api/products_controller.rb:17: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/api/products_controller.rb:17: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/" for ::1 at 2021-06-04 09:22:50 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 100ms (Views: 94.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/products" for ::1 at 2021-06-04 09:22:51 -0700
+  
+SyntaxError (/Users/ying/Desktop/Bootcamp/Ama2on/app/controllers/api/products_controller.rb:17: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/api/products_controller.rb:17: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/" for ::1 at 2021-06-04 09:23:01 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 112ms (Views: 108.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/products" for ::1 at 2021-06-04 09:23:01 -0700
+  
+SyntaxError (/Users/ying/Desktop/Bootcamp/Ama2on/app/controllers/api/products_controller.rb:17: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/api/products_controller.rb:17: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/" for ::1 at 2021-06-04 09:23:09 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 85ms (Views: 81.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/products" for ::1 at 2021-06-04 09:23:09 -0700
+  
+SyntaxError (/Users/ying/Desktop/Bootcamp/Ama2on/app/controllers/api/products_controller.rb:17: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/api/products_controller.rb:17: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/" for ::1 at 2021-06-04 09:23:20 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 91ms (Views: 87.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/products" for ::1 at 2021-06-04 09:23:20 -0700
+  
+SyntaxError (/Users/ying/Desktop/Bootcamp/Ama2on/app/controllers/api/products_controller.rb:17: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/api/products_controller.rb:17: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/" for ::1 at 2021-06-04 09:24:22 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 113ms (Views: 109.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/products" for ::1 at 2021-06-04 09:24:22 -0700
+  
+SyntaxError (/Users/ying/Desktop/Bootcamp/Ama2on/app/controllers/api/products_controller.rb:17: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/api/products_controller.rb:17: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/" for ::1 at 2021-06-04 09:25:10 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 39ms (Views: 35.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2021-06-04 09:27:02 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 121ms (Views: 119.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2021-06-04 09:27:19 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 35ms (Views: 31.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2021-06-04 09:27:22 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 47ms (Views: 42.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/products" for ::1 at 2021-06-04 09:27:23 -0700
+  
+SyntaxError (/Users/ying/Desktop/Bootcamp/Ama2on/app/controllers/api/products_controller.rb:17: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/api/products_controller.rb:17: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/api/products" for ::1 at 2021-06-04 09:27:51 -0700
+  
+SyntaxError (/Users/ying/Desktop/Bootcamp/Ama2on/app/controllers/api/products_controller.rb:17: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/api/products_controller.rb:17: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/" for ::1 at 2021-06-04 09:28:10 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 87ms (Views: 83.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/products" for ::1 at 2021-06-04 09:28:11 -0700
+  
+SyntaxError (/Users/ying/Desktop/Bootcamp/Ama2on/app/controllers/api/products_controller.rb:17: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/api/products_controller.rb:17: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/" for ::1 at 2021-06-04 09:29:01 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 53ms (Views: 50.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/products" for ::1 at 2021-06-04 09:29:01 -0700
+  
+SyntaxError (/Users/ying/Desktop/Bootcamp/Ama2on/app/controllers/api/products_controller.rb:17: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/api/products_controller.rb:17: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/" for ::1 at 2021-06-04 09:30:31 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 73ms (Views: 69.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/products" for ::1 at 2021-06-04 09:30:32 -0700
+  
+SyntaxError (/Users/ying/Desktop/Bootcamp/Ama2on/app/controllers/api/products_controller.rb:17: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/api/products_controller.rb:17: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/" for ::1 at 2021-06-04 09:30:42 -0700
+Processing by StaticPagesController#root as HTML
+Started GET "/api/products" for ::1 at 2021-06-04 09:30:42 -0700
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 71ms (Views: 60.2ms | ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/ying/Desktop/Bootcamp/Ama2on/app/controllers/api/products_controller.rb:17: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/api/products_controller.rb:17: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/" for ::1 at 2021-06-04 09:30:43 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 49ms (Views: 47.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2021-06-04 09:30:45 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 66ms (Views: 60.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/products" for ::1 at 2021-06-04 09:30:46 -0700
+  
+SyntaxError (/Users/ying/Desktop/Bootcamp/Ama2on/app/controllers/api/products_controller.rb:17: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/api/products_controller.rb:17: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/api/products" for ::1 at 2021-06-04 10:09:25 -0700
+  
+SyntaxError (/Users/ying/Desktop/Bootcamp/Ama2on/app/controllers/api/products_controller.rb:17: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/api/products_controller.rb:17: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/" for ::1 at 2021-06-04 10:13:42 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 1239ms (Views: 1236.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/products" for ::1 at 2021-06-04 10:13:44 -0700
+  
+SyntaxError (/Users/ying/Desktop/Bootcamp/Ama2on/app/controllers/api/products_controller.rb:17: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/api/products_controller.rb:17: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/" for ::1 at 2021-06-04 10:16:25 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 1214ms (Views: 1209.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/products" for ::1 at 2021-06-04 10:16:27 -0700
+  
+SyntaxError (/Users/ying/Desktop/Bootcamp/Ama2on/app/controllers/api/products_controller.rb:17: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/api/products_controller.rb:17: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/" for ::1 at 2021-06-04 10:17:50 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 1162ms (Views: 1157.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/products" for ::1 at 2021-06-04 10:17:52 -0700
+  
+SyntaxError (/Users/ying/Desktop/Bootcamp/Ama2on/app/controllers/api/products_controller.rb:17: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/api/products_controller.rb:17: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/" for ::1 at 2021-06-04 10:18:06 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+Started GET "/api/products" for ::1 at 2021-06-04 10:18:06 -0700
+Completed 200 OK in 110ms (Views: 105.7ms | ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/ying/Desktop/Bootcamp/Ama2on/app/controllers/api/products_controller.rb:17: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/api/products_controller.rb:17: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/" for ::1 at 2021-06-04 10:18:11 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 104ms (Views: 87.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2021-06-04 10:18:13 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 50ms (Views: 47.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/products" for ::1 at 2021-06-04 10:18:13 -0700
+  
+SyntaxError (/Users/ying/Desktop/Bootcamp/Ama2on/app/controllers/api/products_controller.rb:17: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/api/products_controller.rb:17: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/" for ::1 at 2021-06-04 10:19:51 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 1191ms (Views: 1187.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/products" for ::1 at 2021-06-04 10:19:53 -0700
+  
+SyntaxError (/Users/ying/Desktop/Bootcamp/Ama2on/app/controllers/api/products_controller.rb:17: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/api/products_controller.rb:17: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/api/products" for ::1 at 2021-06-04 10:19:58 -0700
+  
+SyntaxError (/Users/ying/Desktop/Bootcamp/Ama2on/app/controllers/api/products_controller.rb:17: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/api/products_controller.rb:17: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/" for ::1 at 2021-06-04 10:20:28 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 1108ms (Views: 1104.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/products" for ::1 at 2021-06-04 10:20:30 -0700
+  
+SyntaxError (/Users/ying/Desktop/Bootcamp/Ama2on/app/controllers/api/products_controller.rb:17: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/api/products_controller.rb:17: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/" for ::1 at 2021-06-04 10:21:09 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 1370ms (Views: 1366.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/products" for ::1 at 2021-06-04 10:21:12 -0700
+  
+SyntaxError (/Users/ying/Desktop/Bootcamp/Ama2on/app/controllers/api/products_controller.rb:17: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/api/products_controller.rb:17: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/api/products" for ::1 at 2021-06-04 10:21:15 -0700
+  
+SyntaxError (/Users/ying/Desktop/Bootcamp/Ama2on/app/controllers/api/products_controller.rb:17: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/api/products_controller.rb:17: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/api/products" for ::1 at 2021-06-04 10:21:26 -0700
+  
+SyntaxError (/Users/ying/Desktop/Bootcamp/Ama2on/app/controllers/api/products_controller.rb:17: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/api/products_controller.rb:17: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/api/products" for ::1 at 2021-06-04 10:21:37 -0700
+  
+SyntaxError (/Users/ying/Desktop/Bootcamp/Ama2on/app/controllers/api/products_controller.rb:17: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/api/products_controller.rb:17: syntax error, unexpected end-of-input, expecting keyword_end

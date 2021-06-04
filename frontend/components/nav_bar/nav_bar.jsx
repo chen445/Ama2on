@@ -27,8 +27,10 @@ const NavBar=(props)=>{
                 Account & Lists
                 <div className='dropdown'>
                 <Link className="link-list" to="/login">
-                    Sign in
+                    <button className='signout-dropdown'>Sign in</button>
                 </Link > 
+                <br/>
+                New customer? <Link to="/signup">Star Here</Link>
                 </div>
             </div>
              <p >Return & 
@@ -41,12 +43,12 @@ const NavBar=(props)=>{
     return (
         <header className='nav-bar'>
             <div className='nav-item nav-left logo'>
-                {/* <h1 className='logo'>Ama2on</h1>   */}
-                <img src={window.logoURL2} alt=""/>
+                <Link to="/">
+                <img src={window.logoURL2}/>
+                </Link>
             </div>
             <Search className='nav-item nav-center'/>
             {display} 
-
         </header>
     )
 }
