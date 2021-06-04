@@ -10,6 +10,7 @@ class SessionForm extends React.Component{
             password: this.props.password
         }
         this.handleClick= this.handleClick.bind(this)
+        this.userDemoLogin= this.userDemoLogin.bind(this)
     }
 
     handleClick(e){
@@ -23,12 +24,17 @@ class SessionForm extends React.Component{
 
     errors() {
         return(
-            <ul>
+            <ul className="display-error">
                 {this.props.errors.map((error,i)=>(
                     <li key={i}>{error}</li>
                 ))}
             </ul>
         )
+    }
+
+    userDemoLogin(e){
+        const user={email:"demo@gmail.com", password:"123456"};
+        this.props.demoAction(user)
     }
 
     render(){
@@ -62,13 +68,14 @@ class SessionForm extends React.Component{
         
         return(
             <div>
-                <div className='login-log'>Ama2on</div>
+                <div className='login-log'> <img src={window.logoURL1} alt=""/></div>
             <br></br>
             <form onSubmit={this.handleClick} className='session-form'>
                 <h1 className='header'>{this.props.formType}</h1>
                 <br/>
                 <div className="form-content">
                 {this.errors()}
+                <br></br>
                 <label>Email
                     <br/>
                     <input type="text" 
@@ -88,6 +95,8 @@ class SessionForm extends React.Component{
                 <input type="submit" value={this.props.formType}/>
                 <br/><br/>
                 {link}
+                <br/>
+                <button className ='user-demo' onClick={this.userDemoLogin}>Demo User</button>
                 </div>
             </form>
             </div>

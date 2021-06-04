@@ -4,6 +4,11 @@
     <title>Ama2on</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <script>
+      window.imageUrlRoot = "<%= image_url('') %>"
+      window.logoURL1 = "<%= image_url('Picture1.png') %>"
+      window.logoURL2 = "<%= image_url('Picture2.png') %>"
+    </script>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
