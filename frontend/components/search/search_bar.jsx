@@ -13,13 +13,11 @@ class SearchBar extends React.Component{
 
     render(){
         return(
-            <div className={this.props.className}>
-                <div className='search-box'>
+            <div className={'search-box ' + this.props.className}>
                 <input className="search-bar" type="text"
                 value={this.state.input}
                 onChange={this.update('input')}/>
                 <button type="submit" className="searchIcon"><BsSearch/></button>
-                </div>
             </div>
         )
     }
