@@ -1,8 +1,6 @@
-json.product do
-    json.partial! "/api/products/product", product: @product
-    json.reviewIds @product.reviews.pluck(:id)
-end 
 
+json.partial! "/api/products/product", product: @product
+json.reviewIds @product.reviews.pluck(:id)
 
 @product.reviews.includes(:reviewer).each do |review|
     json.reviews do 

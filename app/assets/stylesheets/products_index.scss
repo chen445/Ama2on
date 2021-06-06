@@ -1,0 +1,27 @@
+.products {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.product-item {
+    background-color: whitesmoke;
+    width: 23.75%;
+    margin-left: 1%;
+    margin-top: 1%;
+    height: 200px;
+}
+
+.product-index-photo{
+    width: 100px;
+    height: 100px;
+}
+
+.home {
+    background-color: lightgray;
+}
+
+.banner {
+    height: 100%;
+    width: 100%;
+}

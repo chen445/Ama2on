@@ -18,6 +18,7 @@ class SearchBar extends React.Component{
                 value={this.state.input}
                 onChange={this.update('input')}/>
                 <button type="submit" className="searchIcon"><BsSearch/></button>
+                <button className="allIcon">All  ▾</button>
             </div>
         )
     }

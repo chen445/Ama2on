@@ -2,6 +2,7 @@ import React from 'react';
 import {Link, Redirect}from 'react-router-dom';
 import Search from '../search/search_bar';
 import {ImCart }from 'react-icons/im';
+import{HiOutlineMenu} from 'react-icons/hi'
 
 const NavBar=(props)=>{
     const display = props.currentUser ? (
@@ -41,16 +42,31 @@ const NavBar=(props)=>{
     );
 
     return (
-        <header className='nav-bar'>
-            <div className='nav-item nav-left logo'>
-                <Link to="/">
-                <img src={window.logoURL2}/>
-                </Link>
+        <div>
+             <header className='nav-bar'>
+                 <div className='nav-item nav-left logo'>
+                    <Link to="/">
+                    <img src={window.logoURL2}/>
+                    </Link>
+                 </div>
+              <Search className='nav-item nav-center'/>
+             {display} 
+            </header>
+            <div className="sub-nav-bar">
+                 <span className='sub-icon'><HiOutlineMenu size={30}/></span>
+                <ul className='category'>
+                    <li>Best Sellers</li>
+                    <li>Books</li>
+                    <li>Health & Beauty</li>
+                    <li>Fashion</li>
+                    <li>Electronics</li>
+                    <li>Food & Gifts</li>
+                </ul>
+
             </div>
-            <Search className='nav-item nav-center'/>
-            {display} 
-        </header>
+        </div>
     )
+
 }
 
 export default NavBar;
