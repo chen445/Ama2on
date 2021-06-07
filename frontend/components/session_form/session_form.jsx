@@ -14,6 +14,7 @@ class SessionForm extends React.Component{
     }
 
     handleClick(e){
+
         e.preventDefault();
         this.props.action(this.state)
     }
@@ -22,13 +23,12 @@ class SessionForm extends React.Component{
         return e=>this.setState({[field]: e.currentTarget.value})
     }
 
-    errors() {
+    errors(field) {
         return(
+            this.props.errors[field] ? 
             <ul className="display-error">
-                {this.props.errors.map((error,i)=>(
-                    <li key={i}>{error}</li>
-                ))}
-            </ul>
+                <li>{this.props.errors[field]}</li>
+            </ul> : ""
         )
     }
 
@@ -76,7 +76,7 @@ class SessionForm extends React.Component{
                 <h1 className='header'>{this.props.formType}</h1>
                 <br/>
                 <div className="form-content">
-                {this.errors()}
+                {this.errors("generalError")}
                 <br></br>
                 <label>Email
                     <br/>
@@ -84,6 +84,8 @@ class SessionForm extends React.Component{
                     value={this.state.email}
                     onChange={this.update('email')}/>
                 </label>
+                {this.errors("emailError")}
+
                 <br/><br/>
                  <label>Password
                      <br/>
@@ -91,6 +93,7 @@ class SessionForm extends React.Component{
                     value={this.state.password}
                     onChange={this.update('password')}/>
                 </label>
+                 {this.errors("passwordError")}
                 <br/><br/>
                 {fisrt_name_input}
                 {last_name_input}
@@ -98,7 +101,7 @@ class SessionForm extends React.Component{
                 <br/><br/>
                 {link}
                 <br/>
-                <button className ='user-demo' onClick={this.userDemoLogin}>Demo User</button>
+                <button onClick={this.userDemoLogin}>Demo User</button>
                 </div>
             </form>
             </div>

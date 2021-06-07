@@ -6,39 +6,49 @@ import{HiOutlineMenu} from 'react-icons/hi'
 
 const NavBar=(props)=>{
     const display = props.currentUser ? (
-         <div className="nav-item nav-right">
-            <div className="horizontal">
-                Hello,{props.currentUser.first_name}
-                 <br></br>
-                Account & Lists
-                <div className='dropdown'>
-                <button className="signout-dropdown" onClick={props.signout}>Log out</button>
-                </div>
-            </div>
-             <p >Return & 
-                <br/>
-                Orders</p>
-             <ImCart/>
+      <div className="nav-item nav-right">
+        <div className="horizontal">
+          <p>
+            Hello,{props.currentUser.first_name}
+            <br></br>
+            Account & Lists
+          </p>
+          <div className="dropdown">
+            <button className="signout-dropdown" onClick={props.signout}>
+              Log out
+            </button>
+          </div>
         </div>
+        <p>
+          Return &
+          <br />
+          Orders
+        </p>
+        <ImCart className="shopping-cart" />
+      </div>
     ) : (
-        <div  className="nav-item nav-right">
-            <div className="horizontal" >
-                Hello,Sign in 
-                <br></br>
-                Account & Lists
-                <div className='dropdown'>
-                <Link className="link-list" to="/login">
-                    <button className='signout-dropdown'>Sign in</button>
-                </Link > 
-                <br/>
-                New customer? <Link to="/signup">Star Here</Link>
-                </div>
-            </div>
-             <p >Return & 
-                <br/>
-                Orders</p>
-            <ImCart/>
+      <div className="nav-item nav-right">
+        <div className="horizontal">
+          <p>
+            Hello,Sign in
+            <br></br>
+            Account & Lists
+          </p>
+          <div className="dropdown">
+            <Link className="link-list" to="/login">
+              <button className="signout-dropdown">Sign in</button>
+            </Link>
+            <br />
+            New customer? <Link to="/signup">Star Here</Link> 
+          </div>
         </div>
+        <p>
+          Return &
+          <br />
+          Orders
+        </p>
+        <ImCart className="shopping-cart" />
+      </div>
     );
 
     return (
@@ -53,7 +63,7 @@ const NavBar=(props)=>{
              {display} 
             </header>
             <div className="sub-nav-bar">
-                 <span className='sub-icon'><HiOutlineMenu size={30}/></span>
+                 <span><HiOutlineMenu size={28}/></span>
                 <ul className='category'>
                     <li>Best Sellers</li>
                     <li>Books</li>

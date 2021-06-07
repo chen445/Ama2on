@@ -13,6 +13,12 @@ Product.delete_all
 Review.delete_all
 
 
+demo_user= User.create!(
+    first_name: "demoUser",
+    last_name:"demo",
+    password:"123456",
+    email:'demo@gmail.com',
+)
 user1 = User.create!(
     first_name: 'Yusef',
     last_name: 'Gillespie',
@@ -200,8 +206,8 @@ product6 = Product.create!(
     seller_id: user9.id,
     price: 30
 )
-product6.photos.attach(io: open("https://ama2on-seeds.s3-us-west-1.amazonaws.com/fried+egg.jpg"), filename:'fried egg.jpg')
 product6.photos.attach(io: open("https://ama2on-seeds.s3-us-west-1.amazonaws.com/jellycat-egg.jpeg"), filename:'jellycat-egg.jpeg')
+product6.photos.attach(io: open("https://ama2on-seeds.s3-us-west-1.amazonaws.com/fried+egg.jpg"), filename:'fried egg.jpg')
 
 product7 = Product.create!(
     product_name: "Coffee Mug",
@@ -267,8 +273,8 @@ product11=Product.create!(
     seller_id: user10.id,
     price: 35
 )
-product11.photos.attach(io: open("https://ama2on-seeds.s3-us-west-1.amazonaws.com/flip_flops.jpg"), filename:'flip_flops.jpg')
 product11.photos.attach(io: open("https://ama2on-seeds.s3-us-west-1.amazonaws.com/flipflop1.jpg"), filename:'flipflop1.jpg')
+product11.photos.attach(io: open("https://ama2on-seeds.s3-us-west-1.amazonaws.com/flip_flops.jpg"), filename:'flip_flops.jpg')
 product11.photos.attach(io: open("https://ama2on-seeds.s3-us-west-1.amazonaws.com/flipflops2.jpg"), filename:'flipflops2.jpg')
 
 product12=Product.create!(
