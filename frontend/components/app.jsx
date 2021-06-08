@@ -10,6 +10,7 @@ import SignUpFormContainer from './session_form/signup_form_container'
 import NavBarContainer from './nav_bar/nav_bar_container'
 import ProductIndexContainer from './home/product_index_container'
 import ProductShowContainer from './products/product_show_container'
+
 const App = () => (
     <div>
         <Route 

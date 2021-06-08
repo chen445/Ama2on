@@ -335,7 +335,8 @@ review1 = Review.create!(
     product_id: product1.id,
     title: "Every JavaScript developer with a pre-existing working knowledge of JavaScript should read this book.",
     body:"If I was to simply sit and read this book I wouldn't learn a thing, I feel that is written well however at points it could be explained in better ways, say that, I imagine this is just my style of learning.",
-    reviewer: user11.id
+    rating: 5,
+    reviewer_id: user11.id
 )
 
 review2 = Review.create!(
@@ -343,23 +344,22 @@ review2 = Review.create!(
     title: "Waste of money",
     body: "I generally prefer to have a book for reference rather than just using the internet but this just isn't worth the money. No real insights. No real depth. It's not a terrible book just really bad value.",
     rating: 3,
-    reviewer: user17.id
+    reviewer_id: user17.id
 )
 review3 = Review.create!(
     product_id: product1.id,
     title: "Great book",
     body: "This is one of those books that you always planned to read. When you do, it's extremely gratifying because it openly admits all of the ridiculous flaws that are contained in JavaScript, a language that is of huge importance to web development and to the various descendant technologies that have been built on its bones.",
     rating: 5,
-    reviewer: user16.id
+    reviewer_id: user16.id
 )
-
 
 review4 = Review.create!(
     product_id: product2.id,
     title: "Great chocolate",
     body: "Great chocolate taste.",
     rating: 5,
-    reviewer: user1.id
+    reviewer_id: user1.id
 )
 
 
@@ -368,7 +368,7 @@ review5 = Review.create!(
     title: "Nice chocolate ",
     body: "The cool thing to do is to collect all the M&M's seasonal bags and make one big bowl of diverse colored M&M's.",
     rating: 5,
-    reviewer: user4.id
+    reviewer_id: user4.id
 )
 
 review6 = Review.create!(
@@ -376,7 +376,7 @@ review6 = Review.create!(
     title: "Very disappointed",
     body: "When ordering I was hopeful that they would be fresh. These appear to have been sitting on a shelf for at least a year.",
     rating: 2,
-    reviewer: user15.id
+    reviewer_id: user15.id
 )
 
 review7 = Review.create!(
@@ -384,7 +384,7 @@ review7 = Review.create!(
     title: "Cute little plant, minimal damage",
     body: "Overall I’m pretty happy with the plant.",
     rating: 5,
-    reviewer: user6.id 
+    reviewer_id: user6.id 
 )
 
 review8 = Review.create!(
@@ -392,7 +392,7 @@ review8 = Review.create!(
     title: "Not what I expected",
     body: "I finally received my plant today after waiting three weeks and I must say, I’m extremely dissatisfied.",
     rating: 3,
-    reviewer: user12.id 
+    reviewer_id: user12.id 
 )
 
 
@@ -401,7 +401,7 @@ review9 = Review.create!(
     title: "Perfect plant! ",
     body: "I love my new plant! I was a little nervous from old reviews, but they were all so old I had a feeling they wouldn’t be right.",
     rating: 5,
-    reviewer: user4.id 
+    reviewer_id: user4.id 
 )
 
 review10 = Review.create!(
@@ -409,7 +409,7 @@ review10 = Review.create!(
     title: "Healthy Plant",
     body: "It does look healthy, but I don't like it.",
     rating: 3,
-    reviewer: user10.id 
+    reviewer_id: user10.id 
 )
 
 review11 = Review.create!(
@@ -417,7 +417,7 @@ review11 = Review.create!(
     title: "Really love it!",
     body: "I love this watch! I've been wearing it every day.",
     rating: 5,
-    reviewer: user10.id 
+    reviewer_id: user10.id 
 )
 
 review12 = Review.create!(
@@ -425,7 +425,7 @@ review12 = Review.create!(
     title: "Great watch for small wrists!!",
     body: "This little watch meets all of my requirements!",
     rating: 5,
-    reviewer: user14.id 
+    reviewer_id: user14.id 
 )
 
  
@@ -434,7 +434,7 @@ review13 = Review.create!(
     title: " Love this!!",
     body: "I actually really like this lamp!",
     rating: 5,
-    reviewer: user3.id 
+    reviewer_id: user3.id 
 )
 
 review14 = Review.create!(
@@ -442,7 +442,7 @@ review14 = Review.create!(
     title: "Great value for the features!",
     body: "Great lamp.",
     rating: 4,
-    reviewer: user5.id 
+    reviewer_id: user5.id 
 )
 
 review15 = Review.create!(
@@ -450,7 +450,7 @@ review15 = Review.create!(
     title: "Modern, clean, functional and great lighting",
     body: "Arrived on time and described. It’s a little smaller than what I measured. However we really like the style.",
     rating: 5,
-    reviewer: user11.id 
+    reviewer_id: user11.id 
 )
 
 review16 = Review.create!(
@@ -458,7 +458,7 @@ review16 = Review.create!(
     title: "Much smaller than you think",
     body: "While the light output is excellent, the lamp is small and you have to have the right place to put the lamp.",
     rating: 3,
-    reviewer: user14.id 
+    reviewer_id: user14.id
 )
 
 review17 = Review.create!(
@@ -466,7 +466,7 @@ review17 = Review.create!(
     title: " Tiny Lamp",
     body: "I returned this. It was tiny.",
     rating: 1,
-    reviewer: user1.id 
+    reviewer_id: user1.id 
 )
 
 review18 = Review.create!(
@@ -474,7 +474,7 @@ review18 = Review.create!(
     title: "Love the Light",
     body: "Fits perfect on the small corner desk I bought.",
     rating: 4,
-    reviewer: user15.id 
+    reviewer_id: user15.id 
 )
 
 review19 = Review.create!(
@@ -482,7 +482,7 @@ review19 = Review.create!(
     title: "cute!",
     body: "Well-made, soft, unique, and adorable.",
     rating: 5,
-    reviewer: user10.id 
+    reviewer_id: user10.id 
 )
 
 review20 = Review.create!(
@@ -490,7 +490,7 @@ review20 = Review.create!(
     title: "cute!",
     body: " Very well made and a nice size.",
     rating: 5,
-    reviewer: user11.id 
+    reviewer_id: user11.id 
 )
 
 review21 = Review.create!(
@@ -498,7 +498,7 @@ review21 = Review.create!(
     title: "so darn cute!",
     body: "Just had to purchase it. I really like it",
     rating: 5,
-    reviewer: user4.id 
+    reviewer_id: user4.id 
 )
 
 review22 = Review.create!(
@@ -506,7 +506,7 @@ review22 = Review.create!(
     title: "Overall, good cup.",
     body: "This mug is nice. I like the fact that it has a broad base.",
     rating: 4,
-    reviewer: user2.id 
+    reviewer_id: user2.id 
 )
 
 review23 = Review.create!(
@@ -514,7 +514,7 @@ review23 = Review.create!(
     title: "Not my favourite",
     body: "The size is a little unnessary compared to the 10oz or larger size",
     rating: 3,
-    reviewer: user10.id 
+    reviewer_id: user10.id 
 )
 
 review24 = Review.create!(
@@ -522,7 +522,7 @@ review24 = Review.create!(
     title: "Perfect Work from Home mug",
     body: "Was looking for an upgrade over the standard ceramic mug. This was exactly what I was looking for.",
     rating: 5,
-    reviewer: user16.id 
+    reviewer_id: user16.id 
 )
 
 review25 = Review.create!(
@@ -530,14 +530,14 @@ review25 = Review.create!(
     title: "Good value",
     body: "Great value for the product.",
     rating: 5,
-    reviewer: user13.id 
+    reviewer_id: user13.id 
 )
 review26 = Review.create!(
     product_id: product8.id,
     title: "Cute, soft pillow",
     body: "My daughter loves this pillow",
     rating: 5,
-    reviewer: user14.id 
+    reviewer_id: user14.id 
 )
 
 review27 = Review.create!(
@@ -545,7 +545,7 @@ review27 = Review.create!(
     title: "Poor make",
     body: "The seam opened up in half hour of use.",
     rating: 1,
-    reviewer: user3.id 
+    reviewer_id: user3.id 
 )
 
 review28 = Review.create!(
@@ -553,7 +553,7 @@ review28 = Review.create!(
     title: " Very cute",
     body: "This little pillow is so cute and perfect",
     rating: 4,
-    reviewer: user6.id 
+    reviewer_id: user6.id 
 )
 
 review29 = Review.create!(
@@ -561,7 +561,7 @@ review29 = Review.create!(
     title: "Love, love this bathing suit",
     body: "This bathing suit fit all of my needs and I love it.",
     rating: 5,
-    reviewer: user3.id 
+    reviewer_id: user3.id 
 )
 
 
@@ -570,7 +570,7 @@ review30 = Review.create!(
     title: "Ideal for me",
     body: "This provides an awesome fit.",
     rating: 5,
-    reviewer: user14.id 
+    reviewer_id: user14.id 
 )
 
 review31 = Review.create!(
@@ -578,7 +578,7 @@ review31 = Review.create!(
     title: "Nice style bra and elastic are a problem",
     body: "Elastic at the back of the legs was loose.",
     rating: 3,
-    reviewer: user17.id 
+    reviewer_id: user17.id 
 )
 
 
@@ -587,7 +587,7 @@ review32 = Review.create!(
     title: "Ill fitting",
     body: "The material was nice and thick. The problem was lack of tummy control.",
     rating: 3,
-    reviewer: user11.id 
+    reviewer_id: user11.id 
 )
 
 
@@ -596,7 +596,7 @@ review33 = Review.create!(
     title: "Not the best",
     body: "They were super cute! They looked great on me. But they broke really quickly, like within two weeks of my purchase.",
     rating: 2,
-    reviewer: user8.id 
+    reviewer_id: user8.id 
 )
 
 review34 = Review.create!(
@@ -604,7 +604,7 @@ review34 = Review.create!(
     title: "Small but cute, definitely not for bigger faces",
     body: "cheap quality and it seem as if it was made for extremely small faces but very cute",
     rating: 2,
-    reviewer: user9.id 
+    reviewer_id: user9.id 
 )
 
 review35 = Review.create!(
@@ -612,7 +612,7 @@ review35 = Review.create!(
     title: "Cute but not comfy",
     body: "Not the most comfortable but they are cute",
     rating: 3,
-    reviewer: user5.id 
+    reviewer_id: user5.id 
 )
 
 
@@ -621,7 +621,7 @@ review36 = Review.create!(
     title: "Perfect beach hat",
     body: "I love this hat!!! ",
     rating: 5,
-    reviewer: user11.id 
+    reviewer_id: user11.id 
 )
 
 review37 = Review.create!(
@@ -629,7 +629,7 @@ review37 = Review.create!(
     title: "I love this hat!",
     body: "I LOVE this hat.It kept the sun off my face.",
     rating: 5,
-    reviewer: user3.id 
+    reviewer_id: user3.id 
 )
 
 
@@ -638,7 +638,7 @@ review38 = Review.create!(
     title: " Damaged not good quality",
     body: "It arrived smashed doesn’t have the shape of the picture.",
     rating: 1,
-    reviewer: user17.id 
+    reviewer_id: user17.id 
 )
 
 
@@ -647,7 +647,7 @@ review39 = Review.create!(
     title: "Not as comfortable as I'd hoped.",
     body: "Not as comfortable as I'd hoped",
     rating: 3,
-    reviewer: user12.id 
+    reviewer_id: user12.id 
 )
 
 review40 = Review.create!(
@@ -655,7 +655,7 @@ review40 = Review.create!(
     title: "Just ok",
     body: " These are just leather straps so they aren’t as comfortable.",
     rating: 3,
-    reviewer: user11.id 
+    reviewer_id: user11.id 
 )
 
 review41 = Review.create!(
@@ -663,7 +663,7 @@ review41 = Review.create!(
     title: " Heel hanging off horrible fit",
     body: "I agree with another reviewer here in that there is something wrong with the proportions of this shoe.",
     rating: 1,
-    reviewer: user8.id 
+    reviewer_id: user8.id 
 )
 
 review42 = Review.create!(
@@ -671,7 +671,7 @@ review42 = Review.create!(
     title: "LOVE LOVE LOVE",
     body: "The style is amazing, they look much better in person.",
     rating: 5,
-    reviewer: user4.id 
+    reviewer_id: user4.id 
 )
 
 review43 = Review.create!(
@@ -679,7 +679,7 @@ review43 = Review.create!(
     title: "Great flavor",
     body: " I was expecting it to be bigger than this. But for the price it's great!",
     rating: 4,
-    reviewer: user4.id 
+    reviewer_id: user4.id 
 )
 
 
@@ -688,7 +688,7 @@ review44= Review.create!(
     title: " Nice product!",
     body: " Fast delivered and well packed",
     rating: 5,
-    reviewer: user9.id 
+    reviewer_id: user9.id 
 )
 
 
@@ -697,7 +697,7 @@ review45= Review.create!(
     title: "The children's favorite!",
     body: "Every single child chose these!",
     rating: 5,
-    reviewer: user13.id 
+    reviewer_id: user13.id 
 )
 
 
@@ -706,7 +706,7 @@ review46= Review.create!(
     title: "It is what I expected",
     body: "I bought for my daughter’s birthday goody bag, and it looks pretty.",
     rating: 4,
-    reviewer: user16.id 
+    reviewer_id: user16.id 
 )
 
 review47= Review.create!(
@@ -714,7 +714,7 @@ review47= Review.create!(
     title: "Undesirable",
     body: "Our first trip to the beach with it and the sand screw broke. ",
     rating: 1,
-    reviewer: user2.id 
+    reviewer_id: user2.id 
 )
 
 review48= Review.create!(
@@ -722,7 +722,7 @@ review48= Review.create!(
     title: "Okay product",
     body: "It did an okay job for the week vacation I used it on but I wouldn’t recommend buying for constant use",
     rating: 3,
-    reviewer: user5.id 
+    reviewer_id: user5.id 
 )
 
 review49= Review.create!(
@@ -730,7 +730,7 @@ review49= Review.create!(
     title: "Great bottles",
     body: "They are very nice and pretty. I highly recommended it.",
     rating: 5,
-    reviewer: user10.id 
+    reviewer_id: user10.id 
 )
 
 
@@ -739,7 +739,7 @@ review50= Review.create!(
     title: "Nice quality",
     body: "Very nice quality.",
     rating: 5,
-    reviewer: user9.id 
+    reviewer_id: user9.id 
 )
 
 review51= Review.create!(
@@ -747,7 +747,7 @@ review51= Review.create!(
     title: "Nice product",
     body: "It looks nice.",
     rating: 4,
-    reviewer: user3.id 
+    reviewer_id: user3.id 
 )
 
 review52= Review.create!(
@@ -755,7 +755,7 @@ review52= Review.create!(
     title: "Worthy purchase.",
     body: "I love love this product.",
     rating: 4,
-    reviewer: user15.id 
+    reviewer_id: user15.id 
 )
 
  

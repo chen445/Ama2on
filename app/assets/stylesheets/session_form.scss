@@ -35,6 +35,7 @@
   border: 1px solid $border;
   box-sizing: border-box;
   border-radius: 5px;
+  font-size: 17px;
 }
 
 input[type=password]:focus{
@@ -91,4 +92,6 @@ input[type=password]:focus{
 }
 
 
-
+.error{
+    box-shadow: 0 0 0 2px red; 
+}

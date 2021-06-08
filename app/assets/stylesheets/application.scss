@@ -14,4 +14,7 @@
  *= require_self
  */
 
-
+ @import "variables";
+*{
+    font-family: $font-family;
+}
