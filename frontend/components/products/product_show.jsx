@@ -30,7 +30,7 @@ class ProductShow extends React.Component{
                     <img
                       onMouseEnter={() => {
                         this.setState({
-                          activeImg: i
+                          activeImg: i,
                         });
                       }}
                       className="sub-photos"
@@ -44,22 +44,35 @@ class ProductShow extends React.Component{
                   <img
                     className="main-photo"
                     src={
-                      this.props.product.photosUrl[this.state.activeImg].photoUrl}
+                      this.props.product.photosUrl[this.state.activeImg]
+                        .photoUrl
+                    }
                   />
                 </div>
               </div>
               <div className="product-description">
-                <ul>
-                  <h1>{this.props.product.product_name}</h1>
-                  <p>By{this.props.product.seller_first_name}</p>
-                  <span>{this.props.product.average_rating}</span>
-                  <span>${this.props.product.price}</span>
-                </ul>
+                <h1>{this.props.product.product_name}</h1>
+                <li className="rating">{this.props.product.average_rating}</li>
+                <h2 className="seller">
+                  Sold by {this.props.product.seller_first_name}
+                </h2>
+                <div className="price">
+                  <h4>Price:</h4>
+                  <h6>${this.props.product.price.toFixed(2)}</h6>
+                  <h5>& FREE Shipping</h5>
+                </div>
+                <div className="description">
+                  <p className>
+                    About this item <br />
+                  </p>
+                    <span>{this.props.product.product_description}</span>
+                </div>
               </div>
               <div className="product-checkout">
-                <p>{this.props.product.price}</p>
-                <h4>& FreeShipping</h4>
-                <span>In Stock</span>
+                <h3>${this.props.product.price.toFixed(2)}</h3>
+                <h4>& FREE Return</h4>
+                <br />
+                <h5>In Stock</h5>
                 <div className="dropdown-content">
                   <label className="dropdown">Qty</label>
                   <select
@@ -85,6 +98,8 @@ class ProductShow extends React.Component{
                     <option value="15">15</option>
                   </select>
                 </div>
+                <button className="addTocart">Add to Cart</button>
+                <button className="buynow">Buy Now</button>
               </div>
             </div>
           </div>
