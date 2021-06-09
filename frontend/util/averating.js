@@ -24,5 +24,3 @@ export const percentage=(ratings)=>{
 
     return starPercents;
 }
-
-

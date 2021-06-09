@@ -1,4 +1,28 @@
+@import "variables";
+
 .review-index-container {
     display: flex;
     flex-direction: row;
+}
+
+.review-index-star-checked{
+    overflow:hidden;
+    white-space:nowrap;
+    cursor:pointer;
+    font-size:38px;
+    color:$orange;
+    margin-left: 10px;
+}
+
+.review-index-star-unchecked{
+    overflow: hidden;
+    white-space: nowrap;
+    cursor: pointer;
+    font-size: 38px;
+    color: $lightgrey;
+    margin-left: 10px;
+}
+
+.review-index-left-section progress {
+    cursor: pointer;
 }

@@ -74,6 +74,7 @@ class ReviewForm extends React.Component {
       );
   }
 
+
   render() {
     const stars = ["★","★","★","★","★"];
 

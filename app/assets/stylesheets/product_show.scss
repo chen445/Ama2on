@@ -205,3 +205,23 @@
     display: flex;
 }
 
+
+.product-show-star-checked{
+    overflow:hidden;
+    cursor:pointer;
+    font-size:38px;
+    color:$orange;
+    margin-left: 10px;
+}
+
+.product-show-star-unchecked{
+    overflow: hidden;
+    white-space: nowrap;
+    cursor: pointer;
+    font-size: 38px;
+    color: $lightgrey;
+    margin-left: 10px;
+}
+.rating{
+    display: flex;
+}

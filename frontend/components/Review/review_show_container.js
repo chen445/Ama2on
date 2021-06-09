@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import ReviewShow from "../products/product_show";
+import ReviewShow from "./review_index";
 import { deleteReview, fetchReviews} from "../../actions/review";
 
 
