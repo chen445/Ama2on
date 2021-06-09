@@ -1,5 +1,8 @@
 
 import React from 'react';
+import { Link } from "react-router-dom";
+import ReviewShowContainer from '../Review/create_review_container';
+
 
 class ProductShow extends React.Component{
     constructor(props){
@@ -62,10 +65,10 @@ class ProductShow extends React.Component{
                   <h5>& FREE Shipping</h5>
                 </div>
                 <div className="description">
-                  <p className>
+                  <p>
                     About this item <br />
                   </p>
-                    <span>{this.props.product.product_description}</span>
+                  <span>{this.props.product.product_description}</span>
                 </div>
               </div>
               <div className="product-checkout">
@@ -102,6 +105,13 @@ class ProductShow extends React.Component{
                 <button className="buynow">Buy Now</button>
               </div>
             </div>
+
+            <div>
+                <ReviewShowContainer avgRating={average_rating}/>
+            </div>
+
+            <Link to={`/review/create-review/${this.props.match.params.productId}`}
+            >To Create review</Link>
           </div>
         );
    } 

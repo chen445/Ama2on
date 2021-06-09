@@ -36,5 +36,4 @@ class Product < ApplicationRecord
     reviews.average(:rating)
   end
 
-
 end

@@ -2,17 +2,17 @@ class Api::UsersController < ApplicationController
    
     def create
         errors={}
-        if params[:first_name]==nil || params[:first_name]==""
+        if user_params[:first_name]==nil || user_params[:first_name]==""
             errors["firstNameError"]="First Name cannot be empty"
         end 
-         if params[:last_name]==nil || params[:last_name]==""
+         if user_params[:last_name]==nil || user_params[:last_name]==""
             errors["lastNameError"]="Last Name cannot be empty"
         end 
-        if params[:email]==nil || params[:email]==""
+        if user_params[:email]==nil || user_params[:email]==""
             errors["emailError"]="Email cannot be empty"
         end 
 
-        if params[:password]==nil || params[:password]==""
+        if user_params[:password]==nil || user_params[:password]==""
             errors["passwordError"]="Password cannot be empty"
         end 
         if !errors.empty?

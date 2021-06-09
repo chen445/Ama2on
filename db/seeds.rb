@@ -330,6 +330,7 @@ product16.photos.attach(io: open("https://ama2on-seeds.s3-us-west-1.amazonaws.co
 product16.photos.attach(io: open("https://ama2on-seeds.s3-us-west-1.amazonaws.com/coffeemaker1.jpg"), filename:'coffeemaker1.jpg')
 product16.photos.attach(io: open("https://ama2on-seeds.s3-us-west-1.amazonaws.com/coffeemaker2.jpg"), filename:'coffeemaker2.jpg')
 
+puts "Creating reviews...."
 
 review1 = Review.create!(
     product_id: product1.id,
@@ -353,6 +354,7 @@ review3 = Review.create!(
     rating: 5,
     reviewer_id: user16.id
 )
+
 
 review4 = Review.create!(
     product_id: product2.id,
@@ -758,6 +760,7 @@ review52= Review.create!(
     reviewer_id: user15.id 
 )
 
+puts "seeds.rb DONE."
  
  
 

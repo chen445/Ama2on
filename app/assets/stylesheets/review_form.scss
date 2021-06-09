@@ -1,0 +1,74 @@
+@import "variables";
+.star-checked{
+    overflow:hidden;
+    white-space:nowrap;
+    cursor:pointer;
+    font-size:38px;
+    color:$orange;
+    margin-left: 10px;
+}
+
+.star-checked:hover{
+    color: $darkorange
+}
+
+.star-checked:active{
+    color: rgb(212, 139, 3);
+}
+
+
+.star-unchecked{
+
+    overflow: hidden;
+    white-space: nowrap;
+    cursor: pointer;
+    font-size: 38px;
+    color: $lightgrey;
+    margin-left: 10px;
+}
+.star-unchecked:hover{
+    color: $darkorange
+}
+
+.star-unchecked:active{
+    color: rgb(212, 139, 3);
+}
+
+.starts{
+    display: flex;
+    margin-left: 10px;
+}
+.create-form{
+    margin-left: auto;
+    width: 40%;
+    margin-right: auto;
+}
+.create-form h1{
+    font-size: 27px;
+    font-weight: 600;
+    margin: auto;
+}
+
+.product-review-info{
+
+}
+.reviewproduct{
+    display: flex;
+    height: 90px;
+    width: 90px;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+
+.comments-detail{
+    align-content: center;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+}
+
+.create-form h2{
+    font-size: 19px;
+    font-weight: 600;
+}
