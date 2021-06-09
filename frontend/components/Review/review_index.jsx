@@ -1,16 +1,16 @@
 import React from "react";
 import { FaUserCircle } from "react-icons/fa";
-import {withRouter} from 'react-router-dom';
-  import { percentage } from "../../util/averating";
-  import {Link} from 'react-router-dom'
+import { withRouter } from "react-router-dom";
+import { percentage } from "../../util/averating";
+import { Link } from "react-router-dom";
 
 class ReviewShow extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-        reviewsByRating: undefined
-    }
+      reviewsByRating: undefined,
+    };
 
     this.renderReviews = this.renderReviews.bind(this);
     this.leftSection = this.leftSection.bind(this);
@@ -31,13 +31,14 @@ class ReviewShow extends React.Component {
   renderStars(rating) {
     const stars = ["★", "★", "★", "★", "★"];
     return (
-      <ol>
+      <div style={{marginTop: "17px"}}>
         {stars.map((star, i) => (
-          <li key={i}>
-            <span className={this.starClass(i + 1, rating)}> {star}</span>
-          </li>
+          <span key={i} className={this.starClass(i + 1, rating)}>
+            {" "}
+            {star}
+          </span>
         ))}
-      </ol>
+      </div>
     );
   }
 
@@ -55,15 +56,16 @@ class ReviewShow extends React.Component {
 
     return (
       <div className="reviews">
+        <h2>Top reviews</h2>
         {reviews.map((review) => {
           return (
-            <div key={review.id}>
-              <FaUserCircle />
-              {review.reviewerFirstName}
-              {review.reviewerLastName}
-              {review.createTime}
-              {review.title}
-              {review.body}
+            <div key={review.id} className="customer-review">
+              
+                  <li> <FaUserCircle size={35} /> {review.reviewerFirstName} {""}
+                   {review.reviewerLastName} </li>
+                <li>{this.renderStars(this.props.reviews.rating)} {review.title}</li>
+              <li>Reviewed on {review.createTime}</li>
+              <li>{review.body}</li>
             </div>
           );
         })}
@@ -71,26 +73,33 @@ class ReviewShow extends React.Component {
     );
   }
 
-
   leftSection() {
     let ratings = [];
     if (!this.reviews) {
-        ratings = this.props.reviews.map((r) => r.rating);
+      ratings = this.props.reviews.map((r) => r.rating);
     }
     const percentageResult = percentage(ratings);
-      
+
     return (
-      <div className="review-index-left-section">
-        <div>{this.renderStars(this.props.avgRating)}</div>
-        <div>total number of reviews: {ratings.length}</div>
-        <div>
+      <div className="review-index-left-section-1">
+        <h2>Customer Reviews</h2>
+        <div className="display-star">
+          {this.renderStars(this.props.avgRating)}{" "}
+          <p>{this.props.avgRating} out of 5</p>
+        </div>
+        <div style={{ marginBottom: "20px", color: "grey" }}>
+          Total {ratings.length} ratings
+        </div>
+        <div className="rating-chart">
           {Object.values(percentageResult).map((pct, i) => {
             return (
               <div key={i}>
-                star {i + 1}
-                <progress 
-                onClick={()=> this.setState({reviewsByRating: i+1})}
-                value={String(pct * 100)} max="100"></progress>
+                star {i + 1} 
+                <progress
+                  onClick ={() => this.setState({ reviewsByRating: i + 1 })}
+                  value={String(pct * 100)}
+                  max="100"
+                 ></progress>
                 {pct * 100} %
               </div>
             );
@@ -103,13 +112,16 @@ class ReviewShow extends React.Component {
   render() {
     return (
       <div className="review-index-container">
-        {this.leftSection()}
-        <Link to={`/review/create-review/${this.props.match.params.productId}`}>
-          <button>
-            Write a customer Review
-          </button>
-        </Link>
-        {this.renderReviews()}
+        <div className="left-section">
+          {this.leftSection()}
+          <p>Review this product</p>
+          <Link
+            to={`/review/create-review/${this.props.match.params.productId}`}
+          >
+            <button>Write a customer Review</button>
+          </Link>
+        </div>
+        <div className="right-section">{this.renderReviews()}</div>
       </div>
     );
   }

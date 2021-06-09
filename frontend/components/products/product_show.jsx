@@ -31,13 +31,11 @@ class ProductShow extends React.Component {
   renderStars(rating) {
     const stars = ["★", "★", "★", "★", "★"];
     return (
-      <ol>
+      <div style={{marginTop:"12px", marginBottom:"12px"}}>
         {stars.map((star, i) => (
-          <li key={i}>
-            <span className={this.starClass(i + 1, rating)}> {star}</span>
-          </li>
+            <span  key={i}className={this.starClass(i + 1, rating)}> {star}</span>
         ))}
-      </ol>
+      </div>
     );
   }
 
@@ -75,9 +73,7 @@ class ProductShow extends React.Component {
           </div>
           <div className="product-description">
             <h1>{this.props.product.product_name}</h1>
-            <li className="rating">
-              {this.renderStars(this.props.product.average_rating)}
-            </li>
+            {this.renderStars(this.props.product.average_rating)}
             <h2 className="seller">
               Sold by {this.props.product.seller_first_name}
             </h2>
@@ -128,9 +124,9 @@ class ProductShow extends React.Component {
           </div>
         </div>
 
-        <div>
+
           <ReviewShowContainer avgRating={this.props.product.average_rating} />
-        </div>
+  
       </div>
     );
   }

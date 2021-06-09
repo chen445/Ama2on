@@ -11,7 +11,7 @@ class Api::ReviewsController < ApplicationController
             errors["bodyError"]="Comment cannot be empty"
         end 
 
-        if params[:review][:rating]==nil || params[:review][:rating]==""
+        if params[:review][:rating]==nil || params[:review][:rating]==0
             errors["startError"]="Rating cannot be empty"
         end 
 

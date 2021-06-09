@@ -83,12 +83,12 @@ input[type=password]:focus{
 
 .form-content button:hover{
     cursor: pointer;
-    color: $lightorange;
+    background-color: $lightorange;
 }
 
 
 .form-content button:active{
-    color: $darkorange;
+    background-color: $darkorange;
 }
 
 

@@ -3,26 +3,116 @@
 .review-index-container {
     display: flex;
     flex-direction: row;
+    border-top: 1px solid $lightgrey;
+    padding-right: 15px;
+    padding-top: 60px;
+    padding-left: 15px;
 }
 
 .review-index-star-checked{
     overflow:hidden;
     white-space:nowrap;
     cursor:pointer;
-    font-size:38px;
+    font-size:20px;
     color:$orange;
-    margin-left: 10px;
+
 }
 
 .review-index-star-unchecked{
     overflow: hidden;
     white-space: nowrap;
     cursor: pointer;
-    font-size: 38px;
+    font-size: 20px;
     color: $lightgrey;
-    margin-left: 10px;
+
 }
 
-.review-index-left-section progress {
+.rating-chart{
+    width: 100%;
+    border-bottom: 1px solid $lightgrey;
+    margin-bottom: 15px;
+    padding-bottom: 20px;
+}
+
+.rating-chart progress {
     cursor: pointer;
 }
+
+progress[value] {
+    width: 253px;
+    height: 39px;
+    font-size: 51px;
+}
+
+
+.left-section{
+    width: 30%;
+}
+
+.right-section{
+    width: 70%;
+}
+
+
+.review-index-left-section-1 h2{
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.display-star{
+ 
+    display: flex;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.display-star p{
+    margin-left: 14px;
+    font-size: 19px;
+    font-weight: 500;
+}
+
+.left-section p{
+     margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 19px;
+    font-weight: 600;
+}
+
+.left-section button{
+    width: 100%;
+    padding: 3px;
+    height: 32px;
+    font-size: 15px;
+    border-radius: 9px;
+    border: none;
+    border: 1px solid $lightergrey;
+   
+}
+
+.right-section{
+    margin-left:75px;
+    display: inline;
+}
+
+// width: 250px; */
+//     /* height: 30px; */
+//     /* padding: 10px; */
+//     font-size: 52px;
+//     /* border-spacing: 19px; */
+//     padding: 10px;
+//     /* -webkit-appearance: none; */
+//     /* appearance: none; */
+//     /* background-color: #eee; */
+//     border-radius: -1px;
+//     box-shadow: r
+
+.reviews{
+    line-height: 1.5;
+}
+
+.reviews h2{
+      font-size: 22px;
+    font-weight: 600;
+}
+

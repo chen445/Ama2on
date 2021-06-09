@@ -8,11 +8,14 @@
     padding-top: 50px;
     padding-left:15px;
     padding-right: 15px;
+    padding-bottom: 60px;
 }
 
 .detail-show{
-    height:100%;
-    width:100%
+    display: flex;
+    flex-direction: column;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 .main-photo{
     display: flex;
@@ -129,12 +132,10 @@
     margin-bottom: 18px;
 }
 
-
-
 .product-checkout{
     display: inline-block;
     line-height: 1.5;
-    border: 1px solid #e7e7e7;
+    border: 1px solid $lightgrey;
     border-radius: 5px;
     vertical-align: top;
     max-width: 270px;
@@ -208,20 +209,18 @@
 
 .product-show-star-checked{
     overflow:hidden;
-    cursor:pointer;
-    font-size:38px;
+    font-size:16px;
     color:$orange;
-    margin-left: 10px;
+   
 }
 
 .product-show-star-unchecked{
     overflow: hidden;
-    white-space: nowrap;
-    cursor: pointer;
-    font-size: 38px;
+    font-size: 16px;
     color: $lightgrey;
-    margin-left: 10px;
 }
-.rating{
+
+
+.review-index{
     display: flex;
 }

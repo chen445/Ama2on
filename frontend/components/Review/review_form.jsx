@@ -31,14 +31,11 @@ class ReviewForm extends React.Component {
   }
 
   handleClick(e) {
-
     e.preventDefault();
     const productId = parseInt(this.props.match.params.productId);
     const review = Object.assign({}, this.state, { product_id: productId });
     this.props.createReview(review).then(() => {
-        this.navigateToProductShow();
-    }).error((e)=>{
-        console.log("has an error: " + e);
+      this.navigateToProductShow();
     });
   }
 
@@ -62,32 +59,33 @@ class ReviewForm extends React.Component {
   }
 
   renderProductImage() {
-      if (!this.props.product) {
-        return null;
-      }
+    if (!this.props.product) {
+      return null;
+    }
 
-      return (
-        <div className="product-review-info">
-          <img className="reviewproduct" src={this.props.product.mainPhoto} />
-          <h4>{this.props.product.product_name}</h4>
-        </div>
-      );
+    return (
+      <div className="product-review-info">
+        <img src={this.props.product.mainPhoto} />
+        <div>{this.props.product.product_name}</div>
+      </div>
+    );
   }
 
-
   render() {
-    const stars = ["★","★","★","★","★"];
+    const stars = ["★", "★", "★", "★", "★"];
 
     return (
       <div className="create-form">
         <h1>Create Review</h1>
         {this.renderProductImage()}
         <form onSubmit={this.handleClick} className="comments-details">
-          <div className="starts">
+          <div>
             <h2>Overall Rating</h2>
-            <br />
+          </div>
+          <div style={{ margin: "25px 0px 25px -17px" }}>
             {stars.map((star, i) => (
-              <li
+              <span
+                className={this.starClass(i + 1)}
                 onClick={() => {
                   this.setState({
                     rating: i + 1,
@@ -95,8 +93,9 @@ class ReviewForm extends React.Component {
                 }}
                 key={i}
               >
-                <span className={this.starClass(i + 1)}> {star}</span>
-              </li>
+                {" "}
+                {star}
+              </span>
             ))}
           </div>
           {this.errors("startError")}
@@ -106,11 +105,14 @@ class ReviewForm extends React.Component {
             <input
               type="text"
               value={this.state.title}
+              className={this.errorClassName("titleError")}
               placeholder="What's most important to know?"
               onChange={this.update("title")}
             />
           </label>
           {this.errors("titleError")}
+          <br />
+          <br />
           <div className="headline">
             <h2>Add a written review</h2>
             <br />
@@ -118,12 +120,18 @@ class ReviewForm extends React.Component {
               type="text"
               value={this.state.body}
               placeholder="What did you like or dislike?"
+              className={this.errorClassName("bodyError")}
               onChange={this.update("body")}
             />
             {this.errors("bodyError")}
           </div>
-          <input type="submit" value="Submit" />
+          <div style={{ textAlign: "right" }}>
+            <button>Submit</button>
+          </div>
         </form>
+        <div style={{marginTop: "-40px"}}>
+          <button onClick={this.navigateToProductShow}>Cancel</button>
+        </div>
       </div>
     );
   }
