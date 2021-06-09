@@ -33,7 +33,8 @@ class Product < ApplicationRecord
     has_many_attached :photos
 
   def average_rating
-    reviews.average(:rating)
+    reviews.average(:rating).to_f.round(2)
+
   end
 
 end

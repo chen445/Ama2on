@@ -4,7 +4,7 @@ import {
   Switch,
   Link,
 } from 'react-router-dom';
-import { AuthRoute, Protected } from "../util/route_utils";
+import { AuthRoute, ProtectedRoute } from "../util/route_utils";
 import LogInFormContainer from './session_form/login_form_container'
 import SignUpFormContainer from './session_form/signup_form_container'
 import NavBarContainer from './nav_bar/nav_bar_container'
@@ -16,7 +16,7 @@ const App = () => (
   <div>
     <Route
       render={({ location }) =>
-        ["/signup", "/login", "/review/create-review"].includes(
+        ["/signup", "/login", "/review/create-review:productId"].includes(
           location.pathname
         ) ? null : (
           <NavBarContainer />
@@ -40,11 +40,11 @@ const App = () => (
           path="/products/:productId"
           component={ProductShowContainer}
         ></Route>
-        <Route
+        <ProtectedRoute
           exact
           path="/review/create-review/:productId"
           component={ReviewFormContainer}
-        ></Route>
+        ></ProtectedRoute>
         <Route exact path="/" component={ProductIndexContainer}></Route>
       </Switch>
     </div>

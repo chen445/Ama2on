@@ -98,7 +98,7 @@ class ReviewForm extends React.Component {
               </span>
             ))}
           </div>
-          {this.errors("startError")}
+            {this.errors("starError")}
           <label className="headline">
             <h2>Add a headline</h2>
             <br />
@@ -129,7 +129,7 @@ class ReviewForm extends React.Component {
             <button>Submit</button>
           </div>
         </form>
-        <div style={{marginTop: "-40px"}}>
+        <div style={{ marginTop: "-40px" }}>
           <button onClick={this.navigateToProductShow}>Cancel</button>
         </div>
       </div>

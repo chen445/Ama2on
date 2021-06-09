@@ -9,13 +9,14 @@ class ReviewShow extends React.Component {
     super(props);
 
     this.state = {
-      reviewsByRating: undefined,
+      reviewsByRating: null,
     };
 
     this.renderReviews = this.renderReviews.bind(this);
     this.leftSection = this.leftSection.bind(this);
     this.renderStars = this.renderStars.bind(this);
     this.starClass = this.starClass.bind(this);
+   
   }
 
   componentDidMount() {
@@ -28,10 +29,11 @@ class ReviewShow extends React.Component {
       : "review-index-star-checked";
   }
 
+  
   renderStars(rating) {
     const stars = ["★", "★", "★", "★", "★"];
     return (
-      <div style={{marginTop: "17px"}}>
+      <div style={{marginTop: "17px", display:"inline-block"}}>
         {stars.map((star, i) => (
           <span key={i} className={this.starClass(i + 1, rating)}>
             {" "}
@@ -48,7 +50,7 @@ class ReviewShow extends React.Component {
     }
 
     const reviews =
-      this.state.reviewsByRating === undefined
+      this.state.reviewsByRating === null
         ? this.props.reviews
         : this.props.reviews.filter(
             (r) => r.rating === this.state.reviewsByRating
@@ -56,16 +58,31 @@ class ReviewShow extends React.Component {
 
     return (
       <div className="reviews">
-        <h2>Top reviews</h2>
+        <span id="top-review">Top reviews</span>
         {reviews.map((review) => {
           return (
             <div key={review.id} className="customer-review">
-              
-                  <li> <FaUserCircle size={35} /> {review.reviewerFirstName} {""}
-                   {review.reviewerLastName} </li>
-                <li>{this.renderStars(this.props.reviews.rating)} {review.title}</li>
-              <li>Reviewed on {review.createTime}</li>
-              <li>{review.body}</li>
+              <li>
+                {" "}
+                <FaUserCircle size={35} /> {review.reviewerFirstName} {""}
+                {review.reviewerLastName}
+              </li>
+
+              <div>
+                {this.renderStars(review.rating)}
+                <li className="review-title">{review.title}</li>
+              </div>
+              <li className="time">Reviewed on {review.createTime}</li>
+              <p>{review.body}</p>
+              {this.props.currentUser && this.props.currentUser.id === review.reviewer_id ? (
+                <button
+                  onClick={() => {
+                    this.props.deleteReview(review.id);
+                  }}
+                >
+                  delete
+                </button>
+              ) :  null }
             </div>
           );
         })}
@@ -84,22 +101,30 @@ class ReviewShow extends React.Component {
       <div className="review-index-left-section-1">
         <h2>Customer Reviews</h2>
         <div className="display-star">
-          {this.renderStars(this.props.avgRating)}{" "}
-          <p>{this.props.avgRating} out of 5</p>
+          {this.renderStars(this.props.avgRating)}
+          <p>{(this.props.avgRating)} out of 5</p>
         </div>
         <div style={{ marginBottom: "20px", color: "grey" }}>
           Total {ratings.length} ratings
+          <button
+            onClick={() => {
+              this.setState({ reviewsByRating: null });
+            }}
+            id="clear-filter"
+          >
+            Clear Filter
+          </button>
         </div>
         <div className="rating-chart">
           {Object.values(percentageResult).map((pct, i) => {
             return (
               <div key={i}>
-                star {i + 1} 
+                star {i + 1}
                 <progress
-                  onClick ={() => this.setState({ reviewsByRating: i + 1 })}
+                  onClick={() => this.setState({ reviewsByRating: i + 1 })}
                   value={String(pct * 100)}
                   max="100"
-                 ></progress>
+                ></progress>
                 {pct * 100} %
               </div>
             );

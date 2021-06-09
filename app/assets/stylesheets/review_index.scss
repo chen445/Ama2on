@@ -15,7 +15,7 @@
     cursor:pointer;
     font-size:20px;
     color:$orange;
-
+   
 }
 
 .review-index-star-unchecked{
@@ -24,7 +24,6 @@
     cursor: pointer;
     font-size: 20px;
     color: $lightgrey;
-
 }
 
 .rating-chart{
@@ -37,6 +36,7 @@
 .rating-chart progress {
     cursor: pointer;
 }
+
 
 progress[value] {
     width: 253px;
@@ -86,9 +86,19 @@ progress[value] {
     font-size: 15px;
     border-radius: 9px;
     border: none;
-    border: 1px solid $lightergrey;
-   
+    border: 1px solid $grey;
+    cursor: pointer;
 }
+
+.left-section button:hover{
+    background-color: rgb(238, 234, 234);
+}
+
+.left-section button:active{
+    background-color: $lightgrey;
+}
+
+
 
 .right-section{
     margin-left:75px;
@@ -109,10 +119,63 @@ progress[value] {
 
 .reviews{
     line-height: 1.5;
+    padding-left:30px;
+    padding-right: 30px;
 }
 
-.reviews h2{
-      font-size: 22px;
+#top-review {
+    font-size: 22px;
     font-weight: 600;
 }
 
+.customer-review{
+    padding-top: 20px;
+}
+
+#clear-filter{
+   padding: 2px;
+    height: 26px;
+    font-size: 15px;
+    /* border-radius: 9px; */
+    border: none;
+    background-color: transparent;
+    color: blue;
+    width: 82px;
+    margin-left: 92px;
+    cursor: pointer;
+}
+
+.review-title{
+    display: inline-block;
+    margin-left: 10px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.reviews p{
+    margin-top: 20px;
+}
+
+
+.time{
+    font-size: 14px;
+    color: $grey;
+}
+
+.customer-review  button{
+    cursor: pointer;
+    margin-top: 10px;
+    height: 25px;
+    font-size: 15px;
+    border-radius: 3px;
+    border: none;
+    border: 1px solid $grey;
+    width: 84px;
+}
+.customer-review button:hover{
+     background-color: rgb(238, 234, 234);
+}
+
+.customer-review button:active{
+    background-color: $lightgrey;
+}

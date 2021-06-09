@@ -3,6 +3,7 @@ class Api::ReviewsController < ApplicationController
 
     def create
          errors={}
+         puts params
          
         if params[:review][:title]==nil || params[:review][:title]==""
             errors["titleError"]="Headline cannot be empty"
@@ -11,8 +12,8 @@ class Api::ReviewsController < ApplicationController
             errors["bodyError"]="Comment cannot be empty"
         end 
 
-        if params[:review][:rating]==nil || params[:review][:rating]==0
-            errors["startError"]="Rating cannot be empty"
+        if params[:review][:rating]==nil || params[:review][:rating]=="0"
+            errors["starError"]="Rating cannot be empty"
         end 
 
         if !errors.empty?
@@ -35,10 +36,10 @@ class Api::ReviewsController < ApplicationController
         end 
     end
 
-    def destory
+    def destroy
         @review = current_user.reviews.find_by(id: params[:id])
-        if @review && @review.destory
-            render status: 200
+        if @review && @review.destroy
+            render json: {}, status: 200
         else 
             render json: @review.errors.full_messages, status: 422
         end 

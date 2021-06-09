@@ -47,7 +47,7 @@
 }
 
 .create-form{
-     margin-left: 25%;
+    margin-left: 25%;
     width: 40%;
     margin-right: 25%;
     margin-top: 65px;
@@ -93,7 +93,7 @@
     width: 100%;
     font-size: 16px;
     padding: 5px;
-    
+    box-sizing:border-box;
 }
 
 .headline textarea{
@@ -101,7 +101,8 @@
     font-size: 16px;
     padding: 5px;
     resize:vertical;
-    height: 180px
+    height: 180px;
+    box-sizing:border-box
 }
 
 .headline textarea:focus{
@@ -128,3 +129,7 @@
     background-color: $darkorange;
 }
 
+.display-error li{
+    padding-bottom:10px;
+
+}
