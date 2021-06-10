@@ -1,15 +1,14 @@
-
-import React from 'react';
+import React from "react";
 import { Link } from "react-router-dom";
-import ReviewShowContainer from '../Review/review_show_container';
-
+import ReviewShowContainer from "../Review/review_show_container";
 
 class ProductShow extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { activeImg: 0 };
+    this.state = { activeImg: 0, quantity: 1 };
 
-   this.renderStars = this.renderStars.bind(this);
+    this.renderStars = this.renderStars.bind(this);
+    this.addToCart = this.addToCart.bind(this);
   }
 
   componentDidMount() {
@@ -31,12 +30,23 @@ class ProductShow extends React.Component {
   renderStars(rating) {
     const stars = ["★", "★", "★", "★", "★"];
     return (
-      <div style={{marginTop:"12px", marginBottom:"12px"}}>
+      <div style={{ marginTop: "12px", marginBottom: "12px" }}>
         {stars.map((star, i) => (
-            <span  key={i}className={this.starClass(i + 1, rating)}> {star}</span>
+          <span key={i} className={this.starClass(i + 1, rating)}>
+            {" "}
+            {star}
+          </span>
         ))}
       </div>
     );
+  }
+
+  addToCart() {
+    const cartItem = {
+      product_id: this.props.product.id,
+      quantity: this.state.quantity,
+    };
+    this.props.createCartItem(cartItem);
   }
 
   render() {
@@ -98,7 +108,7 @@ class ProductShow extends React.Component {
               <label className="dropdown">Qty</label>
               <select
                 className="product-quanitity"
-                onClick={this.update("quanitity")}
+                onChange={this.update("quantity")}
               >
                 <option value="1" defaultValue="1">
                   1
@@ -119,17 +129,17 @@ class ProductShow extends React.Component {
                 <option value="15">15</option>
               </select>
             </div>
-            <button className="addTocart">Add to Cart</button>
+            <button className="addTocart" onClick={() => this.addToCart()}>
+              Add to Cart
+            </button>
             <button className="buynow">Buy Now</button>
           </div>
         </div>
 
-
-          <ReviewShowContainer avgRating={this.props.product.average_rating} />
-  
+        <ReviewShowContainer avgRating={this.props.product.average_rating} />
       </div>
     );
   }
 }
 
-export default ProductShow
+export default ProductShow;

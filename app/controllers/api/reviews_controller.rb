@@ -36,6 +36,7 @@ class Api::ReviewsController < ApplicationController
         end 
     end
 
+
     def destroy
         @review = current_user.reviews.find_by(id: params[:id])
         if @review && @review.destroy

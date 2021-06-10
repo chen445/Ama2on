@@ -34,7 +34,7 @@ class productIndex extends React.Component {
           <ul className="products">
             {topproduct.map((product) => (
               <ProductIndexItem
-                displayRating={true}
+                displayRating={false}
                 product={product}
                 key={product.id}
               />

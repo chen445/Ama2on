@@ -10,8 +10,13 @@ class Api::ProductsController < ApplicationController
 
 
     def index
-        @products = Product.all
-        render "api/products/index"
+        if (params[:query] == nil) 
+            @products = Product.all
+            render "api/products/index"
+        else
+            @products = Product.findBySubstring(params[:query].strip)
+            render "api/products/index"
+        end
     end
     
     

@@ -20,12 +20,11 @@ export const receiveProductErrors = errors =>({
     errors
 })
 
-
-export const fetchProducts = ()=> dispatch => (
-    APIProduct.fetchProducts()
-    .then(products=>(dispatch(receiveProducts(products))),
-    error => (dispatch(receiveProductErrors(error.responseJSON)))
-));
+export const fetchProducts = (query) => (dispatch) =>
+  APIProduct.fetchProducts(query).then(
+    (products) => dispatch(receiveProducts(products)),
+    (error) => dispatch(receiveProductErrors(error.responseJSON))
+  );
 
 export const fetchProduct = productId => dispatch => (
     APIProduct.fetchProduct(productId)

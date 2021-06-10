@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link, Redirect}from 'react-router-dom';
-import Search from '../search/search_bar';
+import SearchBarContainer from "../search/search_bar_container";
 import {ImCart }from 'react-icons/im';
 import{HiOutlineMenu} from 'react-icons/hi'
 
@@ -24,7 +24,12 @@ const NavBar=(props)=>{
           <br />
           Orders
         </p>
-        <ImCart className="shopping-cart" />
+        <Link to="/cart">
+          {props.numberOfCartItems
+            ? props.numberOfCartItems
+            : null}
+          <ImCart className="shopping-cart" />
+        </Link>
       </div>
     ) : (
       <div className="nav-item nav-right">
@@ -39,7 +44,7 @@ const NavBar=(props)=>{
               <button className="signout-dropdown">Sign in</button>
             </Link>
             <br />
-            New customer? <Link to="/signup">Star Here</Link> 
+            New customer? <Link to="/signup">Star Here</Link>
           </div>
         </div>
         <p>
@@ -52,30 +57,31 @@ const NavBar=(props)=>{
     );
 
     return (
-        <div>
-             <header className='nav-bar'>
-                 <div className='nav-item nav-left logo'>
-                    <Link to="/">
-                    <img src={window.logoURL2}/>
-                    </Link>
-                 </div>
-              <Search className='nav-item nav-center'/>
-             {display} 
-            </header>
-            <div className="sub-nav-bar">
-                 <span><HiOutlineMenu size={28}/></span>
-                <ul className='category'>
-                    <li>Best Sellers</li>
-                    <li>Books</li>
-                    <li>Health & Beauty</li>
-                    <li>Fashion</li>
-                    <li>Electronics</li>
-                    <li>Food & Gifts</li>
-                </ul>
-
-            </div>
+      <div>
+        <header className="nav-bar">
+          <div className="nav-item nav-left logo">
+            <Link to="/">
+              <img src={window.logoURL2} />
+            </Link>
+          </div>
+          <SearchBarContainer className="nav-item nav-center" />
+          {display}
+        </header>
+        <div className="sub-nav-bar">
+          <span>
+            <HiOutlineMenu size={28} />
+          </span>
+          <ul className="category">
+            <li>Best Sellers</li>
+            <li>Books</li>
+            <li>Health & Beauty</li>
+            <li>Fashion</li>
+            <li>Electronics</li>
+            <li>Food & Gifts</li>
+          </ul>
         </div>
-    )
+      </div>
+    );
 
 }
 

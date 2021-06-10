@@ -1,35 +1,53 @@
 import React from 'react';
 import { BsSearch } from 'react-icons/bs'
+import { withRouter } from "react-router-dom";
 
-class SearchBar extends React.Component{
-    constructor(props){
-        super(props)
-        this.state={input: " ", focus: false}
+class SearchBar extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { input: "", focus: false };
+    this.search = this.search.bind(this);
+    this.handleKeyUp = this.handleKeyUp.bind(this);
+  }
+
+  handleKeyUp(event) {
+    if (event.keyCode === 13) {
+      event.preventDefault();
+      this.search();
     }
+  }
 
-
-    render(){
-        let outline = "search-box " + this.props.className;
-        if (this.state.focus){
-            outline = outline + ' search-bar-outline'
-        }
-        return (
-          <div className={outline}>
-            <button className="allIcon">All ▾</button>
-            <input
-              className="search-bar"
-              type="text"
-              value={this.state.input}
-              onFocus={(e) => this.setState({ focus: true })}
-              onBlur={(e) => this.setState({ focus: false })}
-              onChange={(e) => this.setState({input: e.currentTarget.value })}
-            />
-            <button type="submit" className="searchIcon">
-              <BsSearch />
-            </button>
-          </div>
-        );
+  search() { 
+    if (this.state.input === undefined || this.state.input === "") {
+      return null;
     }
+    this.props.fetchProducts(this.state.input);
+    this.props.history.push("/search?query=" + escape(this.state.input));
+  }
+
+  render() {
+    let outline = "search-box " + this.props.className;
+    if (this.state.focus) {
+      outline = outline + " search-bar-outline";
+    }
+    return (
+      <div className={outline}>
+        <button className="allIcon">All ▾</button>
+        <input
+          className="search-bar"
+          type="text"
+          value={this.state.input}
+          onFocus={(e) => this.setState({ focus: true })}
+          onBlur={(e) => this.setState({ focus: false })}
+          onChange={(e) => this.setState({ input: e.currentTarget.value })}
+          onKeyUp={this.handleKeyUp}
+        />
+        <button type="submit" className="searchIcon" onClick={this.search}>
+          <BsSearch />
+        </button>
+      </div>
+    );
+  }
 }
 
-export default SearchBar;
+export default withRouter(SearchBar);

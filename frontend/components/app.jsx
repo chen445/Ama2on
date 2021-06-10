@@ -11,6 +11,8 @@ import NavBarContainer from './nav_bar/nav_bar_container'
 import ProductIndexContainer from './home/product_index_container'
 import ProductShowContainer from './products/product_show_container'
 import ReviewFormContainer from './Review/create_review_container'
+import ShoppingCartContainer from './cart_item/shopping_cart_container'
+import SearchResultContainer from "./search/search_container";
 
 const App = () => (
   <div>
@@ -40,10 +42,20 @@ const App = () => (
           path="/products/:productId"
           component={ProductShowContainer}
         ></Route>
+        <Route
+          exact
+          path="/search"
+          component={SearchResultContainer}
+        ></Route>
         <ProtectedRoute
           exact
           path="/review/create-review/:productId"
           component={ReviewFormContainer}
+        ></ProtectedRoute>
+        <ProtectedRoute
+          exact
+          path="/cart"
+          component={ShoppingCartContainer}
         ></ProtectedRoute>
         <Route exact path="/" component={ProductIndexContainer}></Route>
       </Switch>
