@@ -237,7 +237,11 @@ input[type=text]:focus{
 }
 
 .shopping-cart{
-    padding: 2px 9px
+    padding: 2px 9px;
+    size: 26;
+    color: $white;
+    position: relative;
+    
 }
 .shopping-cart:hover{
     cursor: pointer;
@@ -264,4 +268,15 @@ input[type=text]:focus{
     margin-top: 10px;
 }
 
+.number{
+     position: absolute;
+    z-index: 100;
 
+    right: 40px;
+    font-size: 19px;
+
+    color: orange;
+    top: 12px;
+
+}
+   

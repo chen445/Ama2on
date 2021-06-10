@@ -5,14 +5,34 @@ import ReviewShowContainer from "../Review/review_show_container";
 class ProductShow extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { activeImg: 0, quantity: 1 };
+    this.state = { activeImg: 0, quantity: 1 , showpop: false};
 
     this.renderStars = this.renderStars.bind(this);
     this.addToCart = this.addToCart.bind(this);
+    this.popup = this.popup.bind(this);
   }
 
   componentDidMount() {
     this.props.fetchProduct(this.props.match.params.productId);
+  }
+
+
+  popup(){
+    if (!this.state.showpop){
+      return null;
+    }else{
+      return (
+        <div>
+          <h3>Continue Shopping?</h3>
+          <div>
+            <button onClick={()=>this.setState({showpop: false})}>Continue Shopping</button>
+            <Link to="/cart">
+            View Cart</Link>
+          </div>
+        </div>
+      )
+    }
+
   }
 
   update(field) {
@@ -46,7 +66,7 @@ class ProductShow extends React.Component {
       product_id: this.props.product.id,
       quantity: this.state.quantity,
     };
-    this.props.createCartItem(cartItem);
+    this.props.createCartItem(cartItem).then(()=>this.setState({showpop: true}));
   }
 
   render() {
@@ -133,6 +153,7 @@ class ProductShow extends React.Component {
               Add to Cart
             </button>
             <button className="buynow">Buy Now</button>
+            {this.popup()}
           </div>
         </div>
 

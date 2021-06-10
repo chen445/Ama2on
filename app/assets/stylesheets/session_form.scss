@@ -61,12 +61,11 @@ input[type=password]:focus{
     
 }   
 .form-content input[type=submit]:hover{
-    cursor: pointer;
-    color: $lightorange;
+    background-color: $lightorange;
 }
 
 .form-content input[type=submit]:hover{
-    color: $darkorange;
+    background-color: $darkorange;
 }
 
 .display-error{

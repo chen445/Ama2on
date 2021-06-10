@@ -80,24 +80,26 @@ class ShopCart extends React.Component {
     });
 
     return (
-      <div>
-        {Object.values(this.props.cartItems).map((cartItem, i) => {
-          return (
-            <div key={i}>
-              <div>
-                <Link to={`/products/${cartItem.product_id}`}>
-                  <img src={cartItem.mainPhoto} alt="product-img" />
-                </Link>
-              </div>
-              <div>
-                <div>
+      <div className="cart-form">
+        <div className="cart-display">
+          <h1>Shopping Cart</h1>
+          <span>Price</span>
+          {Object.values(this.props.cartItems).map((cartItem, i) => {
+            return (
+              <div className="cart-left-section">
+                <div className="cart-img">
                   <Link to={`/products/${cartItem.product_id}`}>
-                    {cartItem.productName}
+                    <img src={cartItem.mainPhoto} alt="product-img" />
                   </Link>
                 </div>
-                <h4> In Stock </h4>
-                <h3>Free Return</h3>
-                <div>
+                <div className="cart-description">
+                  <div>
+                    <Link to={`/products/${cartItem.product_id}`}>
+                      {cartItem.productName}
+                    </Link>
+                  </div>
+                  <h4> In Stock </h4>
+                  <h3>Free Return</h3>
                   <label>
                     Qty
                     <input
@@ -108,19 +110,35 @@ class ShopCart extends React.Component {
                       }
                     />
                   </label>
+                  <button
+                    className="update-cart"
+                    onClick={() => this.update(cartItem.id)}
+                  >
+                    Update
+                  </button>
+                  <button
+                    className="delete-cart"
+                    onClick={() => this.delete(cartItem.id)}
+                  >
+                    Delete
+                  </button>
                 </div>
-                <h3>
-                  amount:{" "}
-                  {parseInt(cartItem.quantity) * parseFloat(cartItem.price)}{" "}
-                </h3>
-                <button onClick={() => this.update(cartItem.id)}>Update</button>
-                <button onClick={() => this.delete(cartItem.id)}>Delete</button>
+                <div className="cart-price">
+                  <h3>${parseFloat(cartItem.price).toFixed(2)}</h3>
+                </div>
               </div>
-            </div>
-          );
-        })}
+            );
+          })}
+        </div>
+        <div className="cart-right-section">
+          <div className="check-out">
+              <h4>SubTotal:</h4>
+              <span>${subTotal.toFixed(2)}</span>
 
-        <div>{subTotal}</div>
+            <br />
+            <button>Process Checkout</button>
+          </div>
+        </div>
       </div>
     );
   }

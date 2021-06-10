@@ -93,7 +93,6 @@ class ReviewForm extends React.Component {
                 }}
                 key={i}
               >
-                {" "}
                 {star}
               </span>
             ))}

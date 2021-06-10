@@ -7,24 +7,29 @@ class SearchResult extends React.Component {
     super(props);
   }
 
-  componentDidMount() {
-  }
+
+
+
+  componentDidMount() {}
 
   render() {
-    if (!this.props.products) {
-      return null;
+    if (this.props.products.length === 0) {
+      return <div>Product is not found</div>;
     }
     return (
       <div>
-        <ul>
-          {this.props.products.map((product) => (
-            <ProductIndexItem
-              displayRating={true}
-              product={product}
-              key={product.id}
-            />
-          ))}
-        </ul>
+        <div className="search-result">
+          <div className="filter-result"></div>
+          <ul className="search">
+            {this.props.products.map((product) => (
+              <ProductIndexItem
+                displayRating={true}
+                product={product}
+                key={product.id}
+              />
+            ))}
+          </ul>
+        </div>
       </div>
     );
   }
