@@ -38,7 +38,7 @@ class Product < ApplicationRecord
   end
 
   def self.findBySubstring(name) 
-    Product.where('product_name LIKE ?', "%#{name}%")
+    Product.where('product_name ILIKE ?', "%#{name}%")
   end
 
 end
