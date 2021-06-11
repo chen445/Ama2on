@@ -11,7 +11,7 @@ class SearchResult extends React.Component {
 
   render() {
     if (this.props.products.length === 0) {
-      return <div>Product is not found</div>;
+      return <div>No results for </div>;
     }
     return (
       <div>

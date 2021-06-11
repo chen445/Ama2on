@@ -13,6 +13,9 @@ class ProductShow extends React.Component {
   }
 
   componentDidMount() {
+    window.addEventListener("click", (event) => {
+      this.setState({showpop: false})
+    });
     this.props.fetchProduct(this.props.match.params.productId);
   }
 
@@ -23,12 +26,12 @@ class ProductShow extends React.Component {
     }else{
       return (
         <div className="pop-up">
-          <h3>Continue Shopping?</h3>
-          <div>
-            <button onClick={() => this.setState({ showpop: false })}>
-              Continue Shopping
-            </button>
-            <Link to="/cart">View Cart</Link>
+          <div className="pop-up-content">
+            <h3>Added to your bag</h3>
+            <div>
+              <Link to="/">Continue Shopping</Link>
+              <Link to="/cart">View Cart</Link>
+            </div>
           </div>
         </div>
       );
