@@ -7,9 +7,6 @@ class SearchResult extends React.Component {
     super(props);
   }
 
-
-
-
   componentDidMount() {}
 
   render() {

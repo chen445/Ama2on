@@ -58,12 +58,16 @@ class ShopCart extends React.Component {
 
   empty() {
     return (
-      <div>
-        Your Ama2on Cart is empty. Check your Saved for later items below or
-        continue shopping.
+      <div className="empty-cart">
+        <h1>Your Ama2on Cart is empty.</h1> <br />
+        <h2>
+          Check your Saved for later items below or{" "}
+          <Link to="/">continue shopping.</Link>
+        </h2>
       </div>
     );
   }
+
 
   delete(cartItemId) {
     this.props.deleteCartItem(cartItemId);
@@ -86,7 +90,7 @@ class ShopCart extends React.Component {
           <span>Price</span>
           {Object.values(this.props.cartItems).map((cartItem, i) => {
             return (
-              <div className="cart-left-section">
+              <div className="cart-left-section" key={i}>
                 <div className="cart-img">
                   <Link to={`/products/${cartItem.product_id}`}>
                     <img src={cartItem.mainPhoto} alt="product-img" />
@@ -129,12 +133,15 @@ class ShopCart extends React.Component {
               </div>
             );
           })}
+          <div className="total">
+            <h5>SubTotal:</h5>
+            <h6>${subTotal.toFixed(2)}</h6>
+          </div>
         </div>
         <div className="cart-right-section">
           <div className="check-out">
-              <h4>SubTotal:</h4>
-              <span>${subTotal.toFixed(2)}</span>
-
+            <h4>SubTotal:</h4>
+            <span>${subTotal.toFixed(2)}</span>
             <br />
             <button>Process Checkout</button>
           </div>

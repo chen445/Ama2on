@@ -22,15 +22,16 @@ class ProductShow extends React.Component {
       return null;
     }else{
       return (
-        <div>
+        <div className="pop-up">
           <h3>Continue Shopping?</h3>
           <div>
-            <button onClick={()=>this.setState({showpop: false})}>Continue Shopping</button>
-            <Link to="/cart">
-            View Cart</Link>
+            <button onClick={() => this.setState({ showpop: false })}>
+              Continue Shopping
+            </button>
+            <Link to="/cart">View Cart</Link>
           </div>
         </div>
-      )
+      );
     }
 
   }

@@ -269,14 +269,13 @@ input[type=text]:focus{
 }
 
 .number{
-     position: absolute;
+    position: absolute;
     z-index: 100;
-
-    right: 40px;
+    right: 43px;
     font-size: 19px;
-
-    color: orange;
-    top: 12px;
+    color: $orange;
+    top: 14px;
+    font-size: 17px;
 
 }
    

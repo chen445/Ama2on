@@ -224,3 +224,16 @@
     display: flex;
 }
 
+
+
+.pop-up{
+     border: 1px solid $lightgrey;
+    z-index: 100;
+    position: absolute;
+    top: 176px;
+    right: 388px;
+    background: white;
+
+}
+  
+
