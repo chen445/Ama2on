@@ -10,6 +10,17 @@ class SearchBar extends React.Component {
     this.handleKeyUp = this.handleKeyUp.bind(this);
   }
 
+  componentDidMount() {
+    const urlParams = new URLSearchParams(this.props.location.search);
+    const query = urlParams.get("query");
+    if (query) {
+      this.props.fetchProducts(query);
+      this.setState({
+        input: query
+      })
+    }
+  }
+
   handleKeyUp(event) {
     if (event.keyCode === 13) {
       event.preventDefault();

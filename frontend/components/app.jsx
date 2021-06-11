@@ -13,6 +13,7 @@ import ProductShowContainer from './products/product_show_container'
 import ReviewFormContainer from './Review/create_review_container'
 import ShoppingCartContainer from './cart_item/shopping_cart_container'
 import SearchResultContainer from "./search/search_container";
+import {Footer} from './footer/footer'
 
 const App = () => (
   <div>
@@ -60,6 +61,7 @@ const App = () => (
         <Route exact path="/" component={ProductIndexContainer}></Route>
       </Switch>
     </div>
+    <Footer/>
   </div>
 );
 

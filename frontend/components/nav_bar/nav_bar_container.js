@@ -1,6 +1,7 @@
 import { connect } from "react-redux";
 import { logout } from "../../actions/session";
 import NavBar from "./nav_bar";
+import { fetchCartItems } from "../../actions/cart_items";
 
 const calculateCartItems = (cartItems) => {
     let s = 0;
@@ -19,6 +20,7 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   signout: () => dispatch(logout()),
+  fetchCartItems: () => dispatch(fetchCartItems()),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(NavBar);
