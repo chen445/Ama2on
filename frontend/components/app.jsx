@@ -44,11 +44,7 @@ const App = () => (
           path="/products/:productId"
           component={ProductShowContainer}
         ></Route>
-        <Route
-          exact
-          path="/search"
-          component={SearchResultContainer}
-        ></Route>
+        <Route exact path="/search" component={SearchResultContainer}></Route>
         <ProtectedRoute
           exact
           path="/review/create-review/:productId"
@@ -60,10 +56,22 @@ const App = () => (
           component={ShoppingCartContainer}
         ></ProtectedRoute>
         <Route exact path="/" component={ProductIndexContainer}></Route>
-        <Route exact path="/page-not-found" component={UnderConstruction}></Route>
+        <Route
+          exact
+          path="/page-not-found"
+          component={UnderConstruction}
+        ></Route>
       </Switch>
     </div>
-    <Footer/>
+    <Route
+      render={({ location }) =>
+        ["/signup", "/login", "/review/create-review:productId"].includes(
+          location.pathname
+        ) ? null : (
+          <Footer />
+        )
+      }
+    />
   </div>
 );
 
