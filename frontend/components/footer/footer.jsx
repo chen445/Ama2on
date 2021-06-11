@@ -24,7 +24,7 @@ export const Footer = ()=>{
             Ying Chen  | <AiOutlineGithub size={26} />
           </li>
         </div>
-        <li>
+        <li className="buttom-logo">
           <img src={window.logoURL2} />
         </li>
       </div>

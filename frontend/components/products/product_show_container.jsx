@@ -5,7 +5,8 @@ import { createCartItem } from "../../actions/cart_items";
 
 
 const mapStateToProps = (state,ownProps)=>({
-    product: state.entities.products[ownProps.match.params.productId]
+    product: state.entities.products[ownProps.match.params.productId],
+    currentUser: state.session.currentUser
 })
 
 const mapDispatchToProps = (dispatch) => ({

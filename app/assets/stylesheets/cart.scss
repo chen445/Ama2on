@@ -180,11 +180,16 @@
      background-color: $darkergold;
 }
 
+.check-out a{
+    cursor: pointer;
+}
+
 
 .empty-cart{
     padding-top:50px;
     padding-left: 20px;
     padding-right: 20px;
+    height: 600px;
 }
 
 .empty-cart h1{
@@ -223,3 +228,10 @@
      display: inline;
 }
 
+
+
+.construction{
+    height: 600px;
+    font-size: 20px;
+    padding-top: 50px;
+}

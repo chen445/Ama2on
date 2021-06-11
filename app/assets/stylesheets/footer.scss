@@ -15,22 +15,40 @@
     color: $white;
     font-size: 17px;
     cursor: pointer;
+    border: none;
+    padding: 0;
 }
 
 
-// .back-button button:hover{
-//    background-color: 
-// }
+.back-button button:hover{
+   background-color: #1D4C63;
+}
 
 
 
 .footer-infor{
-         text-align: center;
+     text-align: center;
     font-size: 17px;
    color: $white;
-    padding-top: 24px;
+    padding-top: 30px;
    background-color: $blue;
-   border-bottom: 1px solid $lightgrey;
-   padding-bottom: 24px;
+   border-bottom: 1px solid  #3C4455;
+   padding-bottom: 30px;
 }
+
+
+.buttom-logo{
+     background-color: $blue;
+     display: flex;
+}
+
+.buttom-logo img{
+       width: 150px;
+    padding-top: 15px;
+    margin: auto;
+    padding-bottom: 15px;
+    height: 100px;
+}
+
+
 

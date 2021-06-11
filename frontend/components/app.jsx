@@ -14,6 +14,7 @@ import ReviewFormContainer from './Review/create_review_container'
 import ShoppingCartContainer from './cart_item/shopping_cart_container'
 import SearchResultContainer from "./search/search_container";
 import {Footer} from './footer/footer'
+import { UnderConstruction } from './under_construction';
 
 const App = () => (
   <div>
@@ -59,6 +60,7 @@ const App = () => (
           component={ShoppingCartContainer}
         ></ProtectedRoute>
         <Route exact path="/" component={ProductIndexContainer}></Route>
+        <Route exact path="/page-not-found" component={UnderConstruction}></Route>
       </Switch>
     </div>
     <Footer/>

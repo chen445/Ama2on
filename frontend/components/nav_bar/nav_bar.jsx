@@ -28,10 +28,13 @@ class NavBar extends React.Component {
             </button>
           </div>
         </div>
+
         <p>
-          Return &
-          <br />
-          Orders
+          <Link style={{ color: "whitesmoke" }} to="/page-not-found">
+            Return &
+            <br />
+            Orders
+          </Link>
         </p>
         <div className="number">
           {this.props.numberOfCartItems ? this.props.numberOfCartItems : null}
@@ -59,11 +62,15 @@ class NavBar extends React.Component {
           </div>
         </div>
         <p>
-          Return &
-          <br />
-          Orders
+          <Link style={{ color: "whitesmoke" }} to="/page-not-found">
+            Return &
+            <br />
+            Orders
+          </Link>
         </p>
-        <AiOutlineShoppingCart className="shopping-cart" />
+        <Link to="/login">
+          <AiOutlineShoppingCart size={50} className="shopping-cart" />
+        </Link>
       </div>
     );
 
@@ -79,16 +86,30 @@ class NavBar extends React.Component {
           {display}
         </header>
         <div className="sub-nav-bar">
-          <span>
-            <HiOutlineMenu size={28} />
-          </span>
+           <span>
+          <Link to="/page-not-found">
+              <HiOutlineMenu size={28} />
+          </Link>
+            </span>
           <ul className="category">
-            <li>Best Sellers</li>
-            <li>Books</li>
-            <li>Health & Beauty</li>
-            <li>Fashion</li>
-            <li>Electronics</li>
-            <li>Food & Gifts</li>
+            <Link to="/page-not-found">
+              <li>Best Sellers</li>
+            </Link>
+            <Link to="/page-not-found">
+              <li>Books</li>
+            </Link>
+            <Link to="/page-not-found">
+              <li>Health & Beauty</li>
+            </Link>
+            <Link to="/page-not-found">
+              <li>Fashion</li>
+            </Link>
+            <Link to="/page-not-found">
+              <li>Electronics</li>
+            </Link>
+            <Link to="/page-not-found">
+              <li>Food & Gifts</li>
+            </Link>
           </ul>
         </div>
       </div>

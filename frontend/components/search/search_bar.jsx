@@ -1,6 +1,7 @@
 import React from 'react';
 import { BsSearch } from 'react-icons/bs'
-import { withRouter } from "react-router-dom";
+import { withRouter, Link } from "react-router-dom";
+
 
 class SearchBar extends React.Component {
   constructor(props) {
@@ -43,7 +44,9 @@ class SearchBar extends React.Component {
     }
     return (
       <div className={outline}>
-        <button className="allIcon">All ▾</button>
+        <Link to="/page-not-found">
+          <button className="allIcon">All ▾</button>
+        </Link>
         <input
           className="search-bar"
           type="text"

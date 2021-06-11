@@ -5,25 +5,30 @@ import ReviewShowContainer from "../Review/review_show_container";
 class ProductShow extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { activeImg: 0, quantity: 1 , showpop: false};
+    this.state = {
+      activeImg: 0,
+      quantity: 1,
+      showpop: false,
+      showPopError: false,
+    };
 
     this.renderStars = this.renderStars.bind(this);
     this.addToCart = this.addToCart.bind(this);
     this.popup = this.popup.bind(this);
+    this.popupError = this.popupError.bind(this);
   }
 
   componentDidMount() {
-    window.addEventListener("click", (event) => {
-      this.setState({showpop: false})
+    window.addEventListener("click", () => {
+      this.setState({ showpop: false, showPopError: false });
     });
     this.props.fetchProduct(this.props.match.params.productId);
   }
 
-
-  popup(){
-    if (!this.state.showpop){
+  popup() {
+    if (!this.state.showpop) {
       return null;
-    }else{
+    } else {
       return (
         <div className="pop-up">
           <div className="pop-up-content">
@@ -36,7 +41,22 @@ class ProductShow extends React.Component {
         </div>
       );
     }
+  }
 
+  popupError() {
+    if (!this.state.showPopError) {
+      return null;
+    } else {
+      return (
+        <div className="pop-up">
+          <div className="pop-up-content">
+            <h3>
+              Please <Link style={{color:"#2E848D"}} to="/login">login</Link>
+            </h3>
+          </div>
+        </div>
+      );
+    }
   }
 
   update(field) {
@@ -70,7 +90,16 @@ class ProductShow extends React.Component {
       product_id: this.props.product.id,
       quantity: this.state.quantity,
     };
-    this.props.createCartItem(cartItem).then(()=>this.setState({showpop: true}));
+    this.props.createCartItem(cartItem).then(
+      () => this.setState({ showpop: true }),
+      (error) => {
+        if (this.props.currentUser === null) {
+          this.setState({
+            showPopError: true,
+          });
+        }
+      }
+    );
   }
 
   render() {
@@ -156,8 +185,11 @@ class ProductShow extends React.Component {
             <button className="addTocart" onClick={() => this.addToCart()}>
               Add to Cart
             </button>
-            <button className="buynow">Buy Now</button>
+            <Link to="/page-not-found">
+              <button className="buynow">Buy Now</button>
+            </Link>
             {this.popup()}
+            {this.popupError()}
           </div>
         </div>
 

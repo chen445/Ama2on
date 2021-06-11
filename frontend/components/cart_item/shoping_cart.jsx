@@ -143,7 +143,9 @@ class ShopCart extends React.Component {
             <h4>SubTotal:</h4>
             <span>${subTotal.toFixed(2)}</span>
             <br />
-            <button>Process Checkout</button>
+            <Link to="/page-not-found">
+              <button>Process Checkout</button>
+            </Link>
           </div>
         </div>
       </div>

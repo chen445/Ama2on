@@ -9,9 +9,18 @@ class SearchResult extends React.Component {
 
   componentDidMount() {}
 
+
   render() {
+     const urlParams = new URLSearchParams(this.props.location.search);
+     const query = urlParams.get("query");
+
     if (this.props.products.length === 0) {
-      return <div>No results for </div>;
+      return (
+        <div className="no-result">
+          <h1>No results for "{query}"</h1>
+          <h2>Try checking your spelling or use more general terms</h2>
+        </div>
+      );
     }
     return (
       <div>

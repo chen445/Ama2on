@@ -36,7 +36,7 @@
 }
 .nav-right {
     display: flex;
-    width: 330px;
+    width:  360px;
     justify-content: space-between;
     flex-direction: row;
     margin-right: 20px;
@@ -118,7 +118,7 @@
 
 .dropdown{
     display: none;
-    background-color: $white;
+    background: white;
     border: 1px solid $lightgrey;
     position: absolute;
     top: 32px;
@@ -149,6 +149,7 @@
     margin-top: 30px;
     cursor: pointer;
     z-index: 100;
+    border-radius: 4px;
 }
 
 
@@ -250,17 +251,27 @@ input[type=text]:focus{
 }
 .dropdown button:hover{
     cursor: pointer;
-    color: $darkorange;
+    background-color: $darkorange;
 }
 
+.sign-up-link a{
+    color:$lightblue;
+    font-size: 16px;
+}
+
+.sign-up-link a:hover{
+    color: $lightred;
+   text-decoration: $lightred underline;
+   
+}
 
 .signout-dropdown:hover{
     cursor: pointer;
-    color: $lightorange;
+    background-color: $lightorange;
 }
 
 .signout-dropdown:active{
-    color: $darkorange;
+    background-color: $darkorange;
 }
 
 .product-item div{
@@ -276,6 +287,12 @@ input[type=text]:focus{
     color: $orange;
     top: 14px;
     font-size: 17px;
+    font-weight: 700;
 
 }
    
+
+.sub-nav-bar a{
+    color: $white;
+    cursor: pointer;
+}

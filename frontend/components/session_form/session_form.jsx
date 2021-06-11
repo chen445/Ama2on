@@ -91,7 +91,7 @@ class SessionForm extends React.Component {
       );
 
     const link = (
-      <div>
+      <div className="sign-up-link">
         {this.props.displayLink.name} &nbsp;
         <Link
           to={this.props.displayLink.link}
@@ -149,7 +149,7 @@ class SessionForm extends React.Component {
             <input type="submit" value={this.props.formType} />
             <br />
             <br />
-            {link}
+            {link }
             <br />
             <button onClick={this.userDemoLogin}>Demo User</button>
           </div>
