@@ -1,7 +1,7 @@
 # Ama2on
 
 ## Introduction
-Ama2on is e-commence website where buyers can search for products they like. They can see the price and select affordable one.
+Ama2on is e-commerce website where buyers can search for products they like. They can see the price and select affordable one.
 
 Live Site: [Ama2on](https://ama2on.herokuapp.com/#/)
 
