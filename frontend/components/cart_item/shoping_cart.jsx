@@ -32,6 +32,9 @@ class ShopCart extends React.Component {
     };
 
     this.props.createCartItem(updatedCartItem).then(() => {
+      if (this.state.updatedQty[cartItemId] == 0) {
+        this.delete(cartItemId);
+      }
       let updatedQty = Object.assign({}, this.state.updatedQty);
       updatedQty[cartItemId] = undefined;
       this.setState({
@@ -49,6 +52,9 @@ class ShopCart extends React.Component {
   }
 
   changeQty(newQty, cartItemId) {
+    if (isNaN(newQty) || newQty < 0){
+      return ;
+    }
     let updatedQty = Object.assign({}, this.state.updatedQty);
     updatedQty[cartItemId] = newQty;
     this.setState({

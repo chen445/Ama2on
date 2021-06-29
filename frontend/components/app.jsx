@@ -27,7 +27,7 @@ const App = () => (
         )
       }
     />
-    <div>
+    <div style={{ minHeight: "70vh" }}>
       <Switch>
         <AuthRoute
           exact
