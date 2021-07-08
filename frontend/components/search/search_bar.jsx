@@ -55,6 +55,7 @@ class SearchBar extends React.Component {
           onBlur={(e) => this.setState({ focus: false })}
           onChange={(e) => this.setState({ input: e.currentTarget.value })}
           onKeyUp={this.handleKeyUp}
+          placeholder="M&M"
         />
         <button type="submit" className="searchIcon" onClick={this.search}>
           <BsSearch />

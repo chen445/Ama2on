@@ -1,5 +1,6 @@
 import React from 'react'
 import {AiOutlineGithub} from 'react-icons/ai';
+import { FaLinkedin } from "react-icons/fa";
 
 
 
@@ -20,8 +21,23 @@ export const Footer = ()=>{
         </div>
         <div className="footer-infor">
           <li>Get to Know the Creator</li>
-          <li>
-            Ying Chen  | <AiOutlineGithub size={26} />
+          <li style={{ marginTop: "2px" }}>
+            Ying Chen |
+            <a
+              href="https://github.com/chen445"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <AiOutlineGithub size={26} color={"white"} />
+            </a>
+            |
+            <a
+              href="https://www.linkedin.com/in/ychen12"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <FaLinkedin size={26} color={"white"} />
+            </a>
           </li>
         </div>
         <li className="buttom-logo">
