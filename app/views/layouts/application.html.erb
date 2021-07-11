@@ -12,9 +12,19 @@
       window.banner2 = "<%= image_url('summer.png') %>"
       
     </script>
+    <meta property="og:title" content="Ama2on" />
+     <meta property='og:image' content="<%= image_url('project_pic.png') %>"/>
+     <meta property="og:description"
+       content="Ama2on is e-commence website where buyers can search for products they like. They can see the price and select affordable one."
+     />
+     <meta property="og:url"
+       content="https://ama2on.herokuapp.com/#/"
+     />
+
     <%= favicon_link_tag 'logo2.png' %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
   </head>
 
   <body>
