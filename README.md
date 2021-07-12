@@ -5,6 +5,7 @@ Ama2on is e-commerce website where buyers can search for products they like. The
 
 Live Site: [Ama2on](https://ama2on.herokuapp.com/#/)
 
+<img src="https://github.com/chen445/Ama2on/blob/main/app/assets/images/am2on-home_page.gif" alt="demo" width="700" height="350"/>
 
 ## Technologies used:
 * React
@@ -22,6 +23,8 @@ Live Site: [Ama2on](https://ama2on.herokuapp.com/#/)
 * Login with demo account without signing up.
 
 ## Product search
+<img src="https://github.com/chen445/Ama2on/blob/main/app/assets/images/am2on_search.gif" alt="demo" width="700" height="350"/>
+
 * A search bar is displayed on the top.
 * Search products with keywords. A list of products will be displayed to the user. 
 
@@ -49,6 +52,7 @@ search() {
   }
 ```
 ## Product details
+<img src="https://github.com/chen445/Ama2on/blob/main/app/assets/images/am2on_product_details.gif" alt="demo" width="700" height="350"/>
 There is page where details of product are shown to the user.
 * View details of the product, including price, description, pictures, ratings, and reviews.
 * Add the product into the user's shopping cart with a quanitity.
@@ -56,6 +60,7 @@ There is page where details of product are shown to the user.
 * Add a review for the product by clicking the review link, which takes the user to review page to create the review. 
 
 ## Shopping cart
+<img src="https://github.com/chen445/Ama2on/blob/main/app/assets/images/ama2on_shopping_cart.gif" alt="demo" width="700" height="350"/>
 * View products that has been added by the users.
 * Update quantities of a product in the cart.
 * Removing a product in the cart.
