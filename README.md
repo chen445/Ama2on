@@ -54,6 +54,7 @@ search() {
 ## Product details
 <img src="https://github.com/chen445/Ama2on/blob/main/app/assets/images/am2on_product_details.gif" alt="demo" width="700" height="350"/>
 There is page where details of product are shown to the user.
+
 * View details of the product, including price, description, pictures, ratings, and reviews.
 * Add the product into the user's shopping cart with a quanitity.
 * Filter reviews of a rating by clicking on the rating chart. 
@@ -61,6 +62,7 @@ There is page where details of product are shown to the user.
 
 ## Shopping cart
 <img src="https://github.com/chen445/Ama2on/blob/main/app/assets/images/ama2on_shopping_cart.gif" alt="demo" width="700" height="350"/>
+
 * View products that has been added by the users.
 * Update quantities of a product in the cart.
 * Removing a product in the cart.
