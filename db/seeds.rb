@@ -138,13 +138,37 @@ user17= User.create!(
     password: '123456'
 )
 
+category1= Category.create!(
+    category_name: "Books"
+)
+
+category2= Category.create!(
+    category_name: "Health & Household"
+)
+
+category3= Category.create!(
+    category_name: "Electronics"
+)
+
+category4= Category.create!(
+    category_name: "Fashion"
+)
+
+category5= Category.create!(
+    category_name: "Grocery & Gourmet Food"
+)
+
+category6= Category.create!(
+    category_name: "Toys & Game"
+)
+
 
 product1 = Product.create!(
     product_name: "JavaScript: The Good Parts",
     product_description: "This is a book about the JavaScript programming language.",
     seller_id: user1.id,
-    price: 20
-
+    price: 20,
+    category_id: category1.id
 )
 
 product1.photos.attach(io: open("https://ama2on-seeds.s3-us-west-1.amazonaws.com/JavaScript+The+Good+Parts+Cover.jpeg"), filename:'JavaScript The Good Parts Cover.jpeg')
@@ -155,7 +179,8 @@ product2 = Product.create!(
     product_name: "M&M Chocolate",
     product_description: "Made with real milk chocolate, M&M'S Milk Chocolate Candies have a creamy center surrounded by a colorful candy shell",
     seller_id: user3.id,
-    price: 6
+    price: 6,
+    category_id: category5.id
 )
 
 product2.photos.attach(io: open("https://ama2on-seeds.s3-us-west-1.amazonaws.com/61%2BLsg7nzeL._SL1000_.jpg"), filename:'61+Lsg7nzeL._SL1000_.jpg')
@@ -166,7 +191,8 @@ product3 = Product.create!(
     product_name: "Long Leaf Plant",
     product_description: "This is perfect for a table top decoration for home ",
     seller_id: user1.id,
-    price: 30
+    price: 30,
+    category_id: category2.id
 )
 
 product3.photos.attach(io: open("https://ama2on-seeds.s3-us-west-1.amazonaws.com/plant.jpg"), filename:'plant.jpg')
@@ -179,7 +205,8 @@ product4 = Product.create!(
     product_name: "Watch with Leather Strap",
     product_description: "This classic simple watch will be greatly suitable for any occasion.",
     seller_id: user7.id,
-    price: 100
+    price: 100,
+    category_id: category4.id
 )
 
 product4.photos.attach(io: open("https://ama2on-seeds.s3-us-west-1.amazonaws.com/watch.jpg"), filename:'watch.jpg')
@@ -190,7 +217,8 @@ product5 = Product.create!(
     product_name: "Table Lamp",
     product_description:"This lamp fits for bedroom, living room, dining room, office or study.",
     seller_id: user7.id,
-    price: 55
+    price: 55,
+    category_id: category2.id
 )
 
 product5.photos.attach(io: open("https://ama2on-seeds.s3-us-west-1.amazonaws.com/lamp1.jpg"), filename:'lamp1.jpg')
@@ -204,7 +232,8 @@ product6 = Product.create!(
     product_name: "Fried Egg Plush",
     product_description: "Playful plush egg stuffie with beaded eyes and corduroy arms is all set for snuggle.",
     seller_id: user9.id,
-    price: 30
+    price: 30,
+    category_id: category6.id
 )
 product6.photos.attach(io: open("https://ama2on-seeds.s3-us-west-1.amazonaws.com/jellycat-egg.jpeg"), filename:'jellycat-egg.jpeg')
 product6.photos.attach(io: open("https://ama2on-seeds.s3-us-west-1.amazonaws.com/fried+egg.jpg"), filename:'fried egg.jpg')
@@ -213,7 +242,8 @@ product7 = Product.create!(
     product_name: "Coffee Mug",
     product_description: "Big handle which helps you enjoy your tea/coffee comfortably.",
     seller_id: user7.id,
-    price: 20
+    price: 20,
+    category_id: category2.id
 )
 
 product7.photos.attach(io: open("https://ama2on-seeds.s3-us-west-1.amazonaws.com/mug.jpg"), filename:'mug.jpg')
@@ -226,7 +256,8 @@ product8= Product.create!(
     product_name: "Rainbow Shaped Pillow",
     product_description: "Perfect for car,home,office,coffeeshop.",
     seller_id: user9.id,
-    price:30
+    price:30,
+    category_id: category6.id
 )
 
 product8.photos.attach(io: open("https://ama2on-seeds.s3-us-west-1.amazonaws.com/pillow.jpg"), filename:'pillow.jpg')
@@ -237,7 +268,8 @@ product9=Product.create!(
     product_name: "Swimsuit",
     product_description: "Comfortable swimsuite, all ages suitable.",
     seller_id: user10.id,
-    price: 45
+    price: 45,
+    category_id: category4.id
 )
 
 product9.photos.attach(io: open("https://ama2on-seeds.s3-us-west-1.amazonaws.com/swmming_suit.jpg"), filename:'swmming_suit.jpg')
@@ -249,7 +281,8 @@ product10=Product.create!(
     product_name: "Classic Round Sunglasses",
     product_description: " These stylish round sunglasses are made of high-quality frames",
     seller_id: user10.id,
-    price: 150
+    price: 150,
+    category_id: category4.id
 )
 
 product10.photos.attach(io: open("https://ama2on-seeds.s3-us-west-1.amazonaws.com/sunglass.jpg"), filename:'sunglass.jpg')
@@ -259,7 +292,8 @@ product10=Product.create!(
     product_name: "Beach Sun Straw Hat",
     product_description: "These sun straw hats are made of high quality paper straw",
     seller_id: user10.id,
-    price: 30
+    price: 30,
+    category_id: category4.id
 )
 
 product10.photos.attach(io: open("https://ama2on-seeds.s3-us-west-1.amazonaws.com/straw+hat.jpg"), filename:'straw hat.jpg')
@@ -271,7 +305,8 @@ product11=Product.create!(
     product_name: "Flip-Flop",
     product_description: "TLIGHTWEIGHT, COMFORTABLE & WATERPROOF",
     seller_id: user10.id,
-    price: 35
+    price: 35,
+    category_id: category4.id
 )
 product11.photos.attach(io: open("https://ama2on-seeds.s3-us-west-1.amazonaws.com/flipflop1.jpg"), filename:'flipflop1.jpg')
 product11.photos.attach(io: open("https://ama2on-seeds.s3-us-west-1.amazonaws.com/flip_flops.jpg"), filename:'flip_flops.jpg')
@@ -281,7 +316,8 @@ product12=Product.create!(
     product_name: "Rainbow Lollipops",
     product_description: "Stunning colors with delicious flavor",
     seller_id: user3.id,
-    price: 8.99
+    price: 8.99,
+    category_id: category5.id
 )
 
 product12.photos.attach(io: open("https://ama2on-seeds.s3-us-west-1.amazonaws.com/rainbowsucker.jpg"), filename:'rainbowsucker.jpg')
@@ -291,7 +327,8 @@ product13=Product.create!(
     product_name: "Beach Umbrella",
     product_description: "100% UV PROTECTION",
     seller_id: user10.id,
-    price: 65
+    price: 65,
+    category_id: category2.id
 )
 product13.photos.attach(io: open("https://ama2on-seeds.s3-us-west-1.amazonaws.com/umbrella.jpg"), filename:'umbrella.jpg')
 product13.photos.attach(io: open("https://ama2on-seeds.s3-us-west-1.amazonaws.com/umbrella1.jpg"), filename:'umbrella1.jpg')
@@ -301,7 +338,8 @@ product14=Product.create!(
     product_name: "The Road to React",
     product_description: "Your journey to master plain yet pragmatic React.js",
     seller_id: user1.id,
-    price: 29.9
+    price: 29.9,
+    category_id: category1.id
 )
 product14.photos.attach(io: open("https://ama2on-seeds.s3-us-west-1.amazonaws.com/React+hooks.jpeg"), filename:'React hooks.jpeg')
 
@@ -310,7 +348,8 @@ product15=Product.create!(
     product_name: "Reusable Plastic Bottle",
     product_description: "The motivational time marker reminds you to drink enough water throughout the day ",
     seller_id: user7.id,
-    price: 30
+    price: 30,
+    category_id: category2.id
 )
 
 product15.photos.attach(io: open("https://ama2on-seeds.s3-us-west-1.amazonaws.com/waterbottle.jpg"), filename:'waterbottle.jpg')
@@ -323,7 +362,8 @@ product16=Product.create!(
     product_name: "Coffee Maker",
     product_description: "Manual pour over Coffee maker allows you to brew an excellent cup of Coffee",
     seller_id: user7.id,
-    price: 30
+    price: 30,
+    category_id: category2.id
 )
 
 product16.photos.attach(io: open("https://ama2on-seeds.s3-us-west-1.amazonaws.com/coffeeMaker.jpg"), filename:'coffeeMaker.jpg')
@@ -337,7 +377,7 @@ review1 = Review.create!(
     title: "Every JavaScript developer with a pre-existing working knowledge of JavaScript should read this book.",
     body:"If I was to simply sit and read this book I wouldn't learn a thing, I feel that is written well however at points it could be explained in better ways, say that, I imagine this is just my style of learning.",
     rating: 5,
-    reviewer_id: user11.id
+    reviewer_id: user11.id,
 )
 
 review2 = Review.create!(
