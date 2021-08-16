@@ -11,6 +11,7 @@ require 'open-uri'
 User.delete_all
 Product.delete_all
 Review.delete_all
+Category.delete_all
 
 
 demo_user= User.create!(
@@ -276,18 +277,6 @@ product9.photos.attach(io: open("https://ama2on-seeds.s3-us-west-1.amazonaws.com
 product9.photos.attach(io: open("https://ama2on-seeds.s3-us-west-1.amazonaws.com/swimmingsuite2.jpg"), filename:'swimmingsuite2.jpg')
 product9.photos.attach(io: open("https://ama2on-seeds.s3-us-west-1.amazonaws.com/swmmingsuite1.jpg"), filename:'swmmingsuite1.jpg')
 
-
-product10=Product.create!(
-    product_name: "Classic Round Sunglasses",
-    product_description: " These stylish round sunglasses are made of high-quality frames",
-    seller_id: user10.id,
-    price: 150,
-    category_id: category4.id
-)
-
-product10.photos.attach(io: open("https://ama2on-seeds.s3-us-west-1.amazonaws.com/sunglass.jpg"), filename:'sunglass.jpg')
-product10.photos.attach(io: open("https://ama2on-seeds.s3-us-west-1.amazonaws.com/sunglass1.jpg"), filename:'sunglass1.jpg')
-
 product10=Product.create!(
     product_name: "Beach Sun Straw Hat",
     product_description: "These sun straw hats are made of high quality paper straw",
@@ -369,6 +358,145 @@ product16=Product.create!(
 product16.photos.attach(io: open("https://ama2on-seeds.s3-us-west-1.amazonaws.com/coffeeMaker.jpg"), filename:'coffeeMaker.jpg')
 product16.photos.attach(io: open("https://ama2on-seeds.s3-us-west-1.amazonaws.com/coffeemaker1.jpg"), filename:'coffeemaker1.jpg')
 product16.photos.attach(io: open("https://ama2on-seeds.s3-us-west-1.amazonaws.com/coffeemaker2.jpg"), filename:'coffeemaker2.jpg')
+
+
+product17=Product.create!(
+    product_name: "Camera",
+    product_description: "Compact, Lightweight and High-Quality RF Lens with a Versatile Zoom Range of 24-105mm",
+    seller_id: user10.id,
+    price: 1200,
+    category_id: category3.id
+)
+product17.photos.attach(io: open("https://ama2on-seeds.s3.us-west-1.amazonaws.com/camera.jpg"), filename:'camera.jpg')
+product17.photos.attach(io: open("https://ama2on-seeds.s3.us-west-1.amazonaws.com/camera1.jpg"), filename:'camera1.jpg')
+
+product18=Product.create!(
+    product_name: "Bluetooth Speaker",
+    product_description: "The wireless LED Bluetooth speakers not only a speaker but also as a unique night theme light",
+    seller_id: user10.id,
+    price: 50,
+    category_id: category3.id
+)
+product18.photos.attach(io: open("https://ama2on-seeds.s3.us-west-1.amazonaws.com/audio.jpg"), filename:'audio.jpg')
+product18.photos.attach(io: open("https://ama2on-seeds.s3.us-west-1.amazonaws.com/audio1.jpg"), filename:'audio1.jpg')
+
+
+product19=Product.create!(
+    product_name: "Bluetooth Headphones",
+    product_description: "The memory-protein ear cushions ensure lasting wearing comfort as they simulate human skin texture.",
+    seller_id: user10.id,
+    price: 30,
+    category_id: category3.id
+)
+product19.photos.attach(io: open("https://ama2on-seeds.s3.us-west-1.amazonaws.com/headphone.jpg"), filename:'headphone.jpg')
+product19.photos.attach(io: open("https://ama2on-seeds.s3.us-west-1.amazonaws.com/headphone1.jpg"), filename:'headphone1.jpg')
+
+
+product20=Product.create!(
+    product_name: "Instant Camera",
+    product_description: "Snaps and prints pictures that fit in your wallet. Compact and lightweight design",
+    seller_id: user9.id,
+    price: 79,
+    category_id: category3.id
+)
+product20.photos.attach(io: open("https://ama2on-seeds.s3.us-west-1.amazonaws.com/fujiflim.jpg"), filename:'fujiflim.jpg')
+product20.photos.attach(io: open("https://ama2on-seeds.s3.us-west-1.amazonaws.com/fujifilm.jpg"), filename:'fujifilm.jpg')
+
+product21=Product.create!(
+    product_name: "Wireless Noise Cancelling Earbuds",
+    product_description: "Three soft eartip sizes for a stable and comfortable fit while ensuring an optimal acoustic seal",
+    seller_id: user9.id,
+    price: 129,
+    category_id: category3.id
+)
+product21.photos.attach(io: open("https://ama2on-seeds.s3.us-west-1.amazonaws.com/buds.jpg"), filename:'buds.jpg')
+product21.photos.attach(io: open("https://ama2on-seeds.s3.us-west-1.amazonaws.com/buds1.jpg"), filename:'buds1.jpg')
+
+product22=Product.create!(
+    product_name: "Classic Round Sunglasses",
+    product_description: " These stylish round sunglasses are made of high-quality frames",
+    seller_id: user10.id,
+    price: 150,
+    category_id: category4.id
+)
+
+product22.photos.attach(io: open("https://ama2on-seeds.s3-us-west-1.amazonaws.com/sunglass.jpg"), filename:'sunglass.jpg')
+product22.photos.attach(io: open("https://ama2on-seeds.s3-us-west-1.amazonaws.com/sunglass1.jpg"), filename:'sunglass1.jpg')
+
+
+product23=Product.create!(
+    product_name: "LEGO Ideas Grand Piano",
+    product_description: "Experience the hands-on pleasure of creating a highly sophisticated LEGO concert piano model and then play beautiful music with it",
+    seller_id: user12.id,
+    price: 349.5,
+    category_id: category6.id
+)
+
+product23.photos.attach(io: open("https://ama2on-seeds.s3.us-west-1.amazonaws.com/piano1.jpg"), filename:'piano1.jpg')
+product23.photos.attach(io: open("https://ama2on-seeds.s3.us-west-1.amazonaws.com/piano2.jpg"), filename:'piano2.jpg')
+product23.photos.attach(io: open("https://ama2on-seeds.s3.us-west-1.amazonaws.com/piano.jpg"), filename:'piano.jpg')
+
+product24=Product.create!(
+    product_name: "Wooden Castle Buildings",
+    product_description: "BEAUTIFUL & EDUCATIONAL BUILDING BLOCKS SET FOR KIDS that will help spark your child’s imagination and creativity while promoting the development of essential skills! ",
+    seller_id: user9.id,
+    price: 46.99,
+    category_id: category6.id
+)
+
+product24.photos.attach(io: open("https://ama2on-seeds.s3.us-west-1.amazonaws.com/stack1.jpg"), filename:'stack1.jpg')
+product24.photos.attach(io: open("https://ama2on-seeds.s3.us-west-1.amazonaws.com/stack.jpg"), filename:'stack.jpg')
+
+
+
+product25=Product.create!(
+    product_name: "Fruit Chocolate",
+    product_description: "Each berry is delicately hand dipped and decorated in our own kitchen for both culinary artistry and exquisitely decadent taste",
+    seller_id: user9.id,
+    price: 39.99,
+    category_id: category5.id
+)
+
+product25.photos.attach(io: open("https://ama2on-seeds.s3.us-west-1.amazonaws.com/chocolate.jpg"), filename:'chocolate.jpg')
+
+
+
+product26=Product.create!(
+    product_name: "Chocolate Gift Box",
+    product_description: "Twenty chocolate covered sandwich cookies, in a selection of our five most popular flavors.",
+    seller_id: user9.id,
+    price: 35,
+    category_id: category5.id
+)
+
+product26.photos.attach(io: open("https://ama2on-seeds.s3.us-west-1.amazonaws.com/chocolate_gift.jpg"), filename:'chocolate_gift.jpg')
+product26.photos.attach(io: open("https://ama2on-seeds.s3.us-west-1.amazonaws.com/chocolate_gift1.jpg"), filename:'chocolate_gift1.jpg')
+
+
+
+product27=Product.create!(
+    product_name: "Macarons",
+    product_description: "French macarons are thin, flavorful meringue cookies that are sandwiched together with filling. The meringues are what make the cookies unique.",
+    seller_id: user14.id,
+    price: 21,
+    category_id: category5.id
+)
+
+product27.photos.attach(io: open("https://ama2on-seeds.s3.us-west-1.amazonaws.com/macarons.jpg"), filename:'macarons.jpg')
+product27.photos.attach(io: open("https://ama2on-seeds.s3.us-west-1.amazonaws.com/macarons1.jpg"), filename:'macarons1.jpg')
+
+
+product28=Product.create!(
+    product_name: "Avocado Fruit Soft Plush",
+    product_description: "Soft plush toys made of premium plush fabrics, filling with super soft material.",
+    seller_id: user7.id,
+    price: 29.99,
+    category_id: category6.id
+)
+
+product28.photos.attach(io: open("https://ama2on-seeds.s3.us-west-1.amazonaws.com/avocado_plush.jpg"), filename:'avocado_plush.jpg')
+product28.photos.attach(io: open("https://ama2on-seeds.s3.us-west-1.amazonaws.com/avo.jpg"), filename:'avo.jpg')
+
 
 puts "Creating reviews...."
 
@@ -777,7 +905,7 @@ review49= Review.create!(
 
 
 review50= Review.create!(
-    product_id: product15.id,
+    product_id: product16.id,
     title: "Nice quality",
     body: "Very nice quality.",
     rating: 5,
@@ -785,7 +913,7 @@ review50= Review.create!(
 )
 
 review51= Review.create!(
-    product_id: product15.id,
+    product_id: product16.id,
     title: "Nice product",
     body: "It looks nice.",
     rating: 4,
@@ -799,6 +927,256 @@ review52= Review.create!(
     rating: 4,
     reviewer_id: user15.id 
 )
+
+review53= Review.create!(
+    product_id: product17.id,
+    title: "Worthy purchase.",
+    body: "I love love this product.",
+    rating: 4,
+    reviewer_id: user15.id 
+)
+
+review54= Review.create!(
+    product_id: product17.id,
+    title: "Great value.",
+    body: "I love love this product.",
+    rating: 5,
+    reviewer_id: user14.id 
+)
+
+review55= Review.create!(
+    product_id: product18.id,
+    title: "Great Speaker! But...",
+    body: "Great Speaker! But...",
+    rating: 3,
+    reviewer_id: user3.id 
+)
+
+review56= Review.create!(
+    product_id: product18.id,
+    title: "Great value.",
+    body: "I love love this product.",
+    rating: 5,
+    reviewer_id: user5.id 
+)
+
+
+
+review57= Review.create!(
+    product_id: product19.id,
+    title: "I like it",
+    body: "Great product",
+    rating: 5,
+    reviewer_id: user3.id 
+)
+
+review58= Review.create!(
+    product_id: product19.id,
+    title: "Great value.",
+    body: "I love love this product.",
+    rating: 5,
+    reviewer_id: user4.id 
+)
+
+review59= Review.create!(
+    product_id: product19.id,
+    title: "I dont like it",
+    body: "Had these less than 2 months and they’ve started to deteriorate",
+    rating: 2,
+    reviewer_id: user9.id 
+)
+
+
+review60= Review.create!(
+    product_id: product20.id,
+    title: "Great value.",
+    body: "I love love this product.",
+    rating: 5,
+    reviewer_id: user4.id 
+)
+
+review61= Review.create!(
+    product_id: product20.id,
+    title: "I dont like it",
+    body: "Had these less than 2 months and they’ve started to deteriorate",
+    rating: 2,
+    reviewer_id: user9.id 
+)
+
+review60= Review.create!(
+    product_id: product21.id,
+    title: "Great value.",
+    body: "I love love this product.",
+    rating: 5,
+    reviewer_id: user4.id 
+)
+
+review61= Review.create!(
+    product_id: product21.id,
+    title: "Pretty good. Not GREAT, but not bad.",
+    body: "Pretty good. Not GREAT, but not bad.",
+    rating: 4,
+    reviewer_id: user13.id 
+)
+
+
+review62= Review.create!(
+    product_id: product22.id,
+    title: "I love this sunglass",
+    body: "I love it",
+    rating: 5,
+    reviewer_id: user1.id 
+)
+
+
+review63= Review.create!(
+    product_id: product14.id,
+    title: "I love this book",
+    body: "I love this book",
+    rating: 5,
+    reviewer_id: user5.id 
+)
+
+
+review64= Review.create!(
+    product_id: product14.id,
+    title: "This book is great",
+    body: "This book is great",
+    rating: 5,
+    reviewer_id: user10.id 
+)
+
+review65= Review.create!(
+    product_id: product22.id,
+    title: "It was ok",
+    body: "It was ok",
+    rating: 2,
+    reviewer_id: user5.id 
+)
+
+
+review66= Review.create!(
+    product_id: product23.id,
+    title: "Many hours to build, an incredible finished product",
+    body: "Many hours to build, an incredible finished product",
+    rating: 5,
+    reviewer_id: user1.id 
+)
+
+review67= Review.create!(
+    product_id: product23.id,
+    title: "NOT really a piano, NO sound, not very much programmable",
+    body: "NOT really a piano, NO sound, not very much programmable",
+    rating: 3,
+    reviewer_id: user2.id 
+)
+
+
+review68= Review.create!(
+    product_id: product23.id,
+    title: "Very impressive design and detailed",
+    body: "Very impressive design and detailed",
+    rating: 5,
+    reviewer_id: user3.id 
+)
+
+
+review69= Review.create!(
+    product_id: product24.id,
+    title: "Pretty little blocks",
+    body: "Pretty little blocks",
+    rating: 4,
+    reviewer_id: user4.id 
+)
+
+
+review70= Review.create!(
+    product_id: product24.id,
+    title: "Gorgeous Castle!",
+    body: "Gorgeous Castle!",
+    rating: 5,
+    reviewer_id: user2.id 
+)
+
+
+review71= Review.create!(
+    product_id: product25.id,
+    title: "Great Berries!",
+    body: "The strawberries were very large, they arrived in great condition, and they were delicious.",
+    rating: 5,
+    reviewer_id: user4.id 
+)
+
+
+review72= Review.create!(
+    product_id: product25.id,
+    title: "Fresh mostly",
+    body: "All chocolates were great tasting but a little different from edible arrangements.",
+    rating: 2,
+    reviewer_id: user8.id 
+)
+
+review73= Review.create!(
+    product_id: product26.id,
+    title: "Great gift",
+    body: "Great gift",
+    rating: 5,
+    reviewer_id: user14.id 
+)
+
+
+review74= Review.create!(
+    product_id: product26.id,
+    title: "Great!",
+    body: "I will definitely order these again! Delicious!",
+    rating: 5,
+    reviewer_id: user12.id 
+)
+
+
+
+review75= Review.create!(
+    product_id: product27.id,
+    title: "I’m totally disappointed",
+    body: "I’m totally disappointed",
+    rating: 1,
+    reviewer_id: user13.id 
+)
+
+
+review76= Review.create!(
+    product_id: product27.id,
+    title: "It was ok",
+    body: "It was ok.",
+    rating: 3,
+    reviewer_id: user4.id 
+)
+
+
+
+review77= Review.create!(
+    product_id: product28.id,
+    title: "Big, soft and squishy",
+    body: "Big, soft and squishy",
+    rating: 5,
+    reviewer_id: user3.id 
+)
+
+
+review78= Review.create!(
+    product_id: product28.id,
+    title: "Lovely product!",
+    body: "Lovely product!",
+    rating: 5,
+    reviewer_id: user6.id 
+)
+
+
+
+
+
+
+
 
 puts "seeds.rb DONE."
  
