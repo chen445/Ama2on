@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, Redirect } from "react-router-dom";
+import { Link, Redirect, withRouter} from "react-router-dom";
 import SearchBarContainer from "../search/search_bar_container";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { HiOutlineMenu } from "react-icons/hi";
@@ -7,10 +7,17 @@ import { HiOutlineMenu } from "react-icons/hi";
 class NavBar extends React.Component {
   constructor(props) {
     super(props);
+  this.displayCategory=this.displayCategory.bind(this)
   }
 
   componentDidMount() {
     this.props.fetchCartItems();
+    this.props.fetchCategories()
+  }
+
+  displayCategory(catergoryId){
+    this.props.fetchCategory(catergoryId);
+    this.props.history.push("/search")
   }
 
   render() {
@@ -86,30 +93,17 @@ class NavBar extends React.Component {
           {display}
         </header>
         <div className="sub-nav-bar">
-           <span>
-          <Link to="/page-not-found">
+           {/* <span>
               <HiOutlineMenu size={28} />
-          </Link>
-            </span>
+            </span> */}
           <ul className="category">
-            <Link to="/page-not-found">
-              <li>Best Sellers</li>
-            </Link>
-            <Link to="/page-not-found">
-              <li>Books</li>
-            </Link>
-            <Link to="/page-not-found">
-              <li>Health & Beauty</li>
-            </Link>
-            <Link to="/page-not-found">
-              <li>Fashion</li>
-            </Link>
-            <Link to="/page-not-found">
-              <li>Electronics</li>
-            </Link>
-            <Link to="/page-not-found">
-              <li>Food & Gifts</li>
-            </Link>
+            {this.props.categories.map((category)=>{
+              return (
+                <li onClick={()=>this.displayCategory(category.id)}>
+                  {category.category_name}
+                </li>
+              );
+            })}
           </ul>
         </div>
       </div>
@@ -117,4 +111,4 @@ class NavBar extends React.Component {
   }
 }
 
-export default NavBar;
+export default withRouter(NavBar);

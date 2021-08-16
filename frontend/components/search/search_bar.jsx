@@ -6,9 +6,11 @@ import { withRouter, Link } from "react-router-dom";
 class SearchBar extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { input: "", focus: false };
+    this.state = { input: "", focus: false, selectCategoryId: "0" };
     this.search = this.search.bind(this);
     this.handleKeyUp = this.handleKeyUp.bind(this);
+    this.selectCategory = this.selectCategory.bind(this);
+    this.categoryWidth = this.categoryWidth.bind(this);
   }
 
   componentDidMount() {
@@ -17,8 +19,8 @@ class SearchBar extends React.Component {
     if (query) {
       this.props.fetchProducts(query);
       this.setState({
-        input: query
-      })
+        input: query,
+      });
     }
   }
 
@@ -29,12 +31,36 @@ class SearchBar extends React.Component {
     }
   }
 
-  search() { 
+  search() {
     if (this.state.input === undefined || this.state.input === "") {
+      if (this.state.selectCategoryId == "0") {
+        this.props.history.push("/");
+      } else {
+         this.props.fetchCategory(this.state.selectCategoryId);
+         this.props.history.push("/search");
+      }
       return null;
     }
     this.props.fetchProducts(this.state.input);
-    this.props.history.push("/search?query=" + escape(this.state.input));
+    this.props.history.push(
+      "/search?query=" +
+        escape(this.state.input) +
+        "&catergory=" +
+        escape(this.state.selectCategoryId)
+    );
+  }
+
+  selectCategory(event) {
+    this.setState({ selectCategoryId: event.target.value });
+  }
+
+  categoryWidth(categoryId) {
+    for (let i = 0; i < this.props.categories.length; i++) {
+      if (this.props.categories[i].id == categoryId) {
+        return this.props.categories[i].category_name.length;
+      }
+    }
+    return 3;
   }
 
   render() {
@@ -44,9 +70,24 @@ class SearchBar extends React.Component {
     }
     return (
       <div className={outline}>
-        <Link to="/page-not-found">
-          <button className="allIcon">All ▾</button>
-        </Link>
+        <select
+          className="allIcon"
+          style={{
+            width: `${
+              8 * this.categoryWidth(this.state.selectCategoryId) + 20
+            }px`,
+          }}
+          onKeyUp={this.handleKeyUp}
+          onChange={this.selectCategory}
+        >
+          <option value="0">All</option>
+          {this.props.categories.map((category) => {
+            return (
+              <option value={category.id}>{category.category_name}</option>
+            );
+          })}
+        </select>
+
         <input
           className="search-bar"
           type="text"

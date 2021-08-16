@@ -8,7 +8,6 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  fetchProducts: products=>dispatch(fetchProducts(products))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(SearchResult);
