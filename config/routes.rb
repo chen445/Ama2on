@@ -10,6 +10,12 @@ Rails.application.routes.draw do
     resources :cart_items, only:[:create, :destroy, :index]
     resources :categories, only: [:index,:show]
   end
+  # Remove it eventually.
+  get '*all', to: 'static_pages#root', constraints: lambda { |req|
+    req.path.exclude? 'rails/active_storage'
+  }
+
   root to: "static_pages#root"
+  # match "/%23" :to => "static_pages#root" via: get
 end
 
