@@ -8,7 +8,7 @@
 #  product_name        :string           not null
 #  created_at          :datetime         not null
 #  updated_at          :datetime         not null
-#  category_id         :integer          not null
+#  category_id         :integer
 #  seller_id           :integer          not null
 #
 # Indexes
@@ -18,7 +18,7 @@
 #  index_products_on_seller_id     (seller_id)
 #
 class Product < ApplicationRecord
-    validates :product_description,:product_name,:price,:category_id,presence: true
+    validates :product_description,:product_name,:price,presence: true
     
     belongs_to :seller,
         foreign_key: :seller_id,
