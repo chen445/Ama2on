@@ -13,11 +13,12 @@ class Api::ProductsController < ApplicationController
         if (params[:query] == nil) 
             @products = Product.all
             render "api/products/index"
-        else
+        elsif (params[:categoryId]==nil || params[:categoryId]== 0)
             @products = Product.findBySubstring(params[:query].strip)
             render "api/products/index"
+        else
+             @products = Category.searchProducts(params[:categoryId],params[:query].strip)
         end
     end
-    
     
 end

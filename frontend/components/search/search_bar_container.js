@@ -8,7 +8,8 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  fetchProducts: (products) => dispatch(fetchProducts(products)),
+  fetchProducts: (query, categoryId) =>
+    dispatch(fetchProducts(query, categoryId)),
   fetchCategory: (categoryId) => dispatch(fetchCategory(categoryId)),
 });
 

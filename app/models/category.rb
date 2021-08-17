@@ -10,4 +10,8 @@ class Category < ApplicationRecord
     has_many :products,
         foreign_key: :category_id,
         class_name: :Product
+
+    def self.searchProducts(categoryId,searchQuery)
+        Category.find_by(id: categoryId ).products.where('product_name ILIKE ?', "%#{searchQuery}%")
+    end
 end
