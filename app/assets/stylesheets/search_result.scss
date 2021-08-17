@@ -25,5 +25,30 @@
 .search-result{
  padding-bottom: 60px;
  background-color: $white;
+ display: flex;
+ flex-direction: column;
 }
 
+.sorted{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 20px;
+    padding-right: 55px;
+}
+.sorted select:focus{
+  box-shadow: none;
+  outline: none;
+}
+.sorted select{
+    border-radius: 7px;
+    cursor: pointer;
+};
+
+.sorted select:hover{
+  background-color: rgb(238, 234, 234);
+}
+
+.sorted span{
+    padding-left: 55px;
+    font-size: 20px
+}
